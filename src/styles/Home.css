@@ -8,11 +8,13 @@
     grid-column-end: 3;
 }
 
+.sectionHeader{
+    align-self: start;
+}
+
 #HomeCurrentRead{
     display: flex;
-    border-style: solid;
-    border-width: 1px;
-    border-color: black;
+    background-color: #E5DDD5;
     
 }
 
@@ -25,14 +27,31 @@
     text-align: center;
 }
 #HomeRecentPosts{
-    border-style: solid;
-    border-width: 1px;
-    border-color: black;
+    background-color: #C39F97;
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+.dummyBlog{
+    background-color: #934C47;
+    height: 50%;
+}
+
+.dummyBlogButton{
+    background-color: #a96e6c;
+    border-style: none;
 }
 
 #HomeIGPosts{
-    border-style: solid;
-    border-width: 1px;
-    border-color: black;
+    background-color: #E5DDD5;
+}
+
+@media screen and (max-width: 500px) {
+    #Home{
+        grid-column-start: 1;
+        grid-column-end: 3;
+    }
+
 }
 

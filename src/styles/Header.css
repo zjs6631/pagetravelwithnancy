@@ -1,11 +1,10 @@
 #Header{
     display: flex;
     width: 100%;
-    border-style: solid;
-    border-width: 1px;
-    border-color: black;
+    background-color: #934C47;
     grid-column-start: 1;
     grid-column-end: 3;
+
 }
 
 #HeaderLogo{
@@ -14,9 +13,8 @@
     align-items: center;
     width: 40%;
     height: 100%;
-    border-style: solid;
-    border-width: 1px;
-    border-color: black;
+    color: #E5DDD5;
+    
 }
 
 .HeaderLink{
@@ -25,8 +23,6 @@
     align-items: center;
     width: 15%;
     height: 100%;
-    border-style: solid;
-    border-width: 1px;
-    border-color: black;
+    color: #E5DDD5;
 }
 
