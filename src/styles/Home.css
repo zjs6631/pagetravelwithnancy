@@ -1,46 +1,79 @@
 #Home{
+    
     display: grid;
     grid-template-rows: 20% 60% 20%;
-    border-style: solid;
-    border-width: 1px;
-    border-color: black;
     grid-column-start: 2;
     grid-column-end: 3;
 }
 
 .sectionHeader{
     align-self: start;
+    padding-left: 10px;
 }
 
 #HomeCurrentRead{
-    display: flex;
+    display: grid;
     background-color: #E5DDD5;
-    
+    grid-template-columns: 1fr 10fr;
+}
+
+.currentReadContainer{
+    display: grid;
+    grid-template-columns: repeat(5, 20%);
 }
 
 .dummyRead{
     height: 100%;
-    width: 10%;
-    border-style: solid;
-    border-width: 1px;
-    border-color: black;
+    width: 100%;
     text-align: center;
+}
+
+.dummyRead img{
+    width: 25%;
 }
 #HomeRecentPosts{
     background-color: #C39F97;
-    display: flex;
     gap: 10px;
     align-items: center;
+    padding: 10px;
+}
+
+#HomeRecentPosts p{
+    margin: 0;
+    margin-bottom: 10px;
+}
+.blogContainer{
+    display: flex;
+    flex-wrap: wrap;
+    height: 90%;
+    gap: 10px;
 }
 
 .dummyBlog{
+    display: grid;
+    grid-template-columns: 50% 50%;
+    grid-template-rows: 50% 50%;
     background-color: #934C47;
-    height: 50%;
+    height: auto;
+    width: 20%;
+    height: 40%;
+    text-align: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.dummyBlog img{
+    grid-column-start: 1;
+    grid-column-end: 2;
+    grid-row-start: 1;
+    grid-row-end: 3;
+    width: 80%;
 }
 
 .dummyBlogButton{
     background-color: #a96e6c;
     border-style: none;
+    justify-self: center;
 }
 
 #HomeIGPosts{
