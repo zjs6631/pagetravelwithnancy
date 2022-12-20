@@ -1,7 +1,32 @@
 #Header{
+    display: flex;
+    width: 100%;
     border-style: solid;
     border-width: 1px;
     border-color: black;
     grid-column-start: 1;
     grid-column-end: 3;
 }
+
+#HeaderLogo{
+    display: grid;
+    text-align: center;
+    align-items: center;
+    width: 40%;
+    height: 100%;
+    border-style: solid;
+    border-width: 1px;
+    border-color: black;
+}
+
+.HeaderLink{
+    display: grid;
+    text-align: center;
+    align-items: center;
+    width: 15%;
+    height: 100%;
+    border-style: solid;
+    border-width: 1px;
+    border-color: black;
+}
+
