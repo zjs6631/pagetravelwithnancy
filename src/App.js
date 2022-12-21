@@ -10,12 +10,13 @@ import Shops from './components/Shops';
 import './styles/Header.css';
 import './styles/Home.css';
 import './styles/Sidebar.css';
+import './styles/Posts.css';
 
 function App() {
   return (
     <div className="App">
       <Header />
-      
+
       <Routes>
         <Route index element = {<Home />}/>
         <Route path='posts' element ={<Posts />}/>
