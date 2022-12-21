@@ -26,3 +26,14 @@
     color: #E5DDD5;
 }
 
+.headerBtn{
+    border-style: none;
+    background-color: #934C47;
+    color:#E5DDD5;
+    font-size: 20px;
+}
+
+.headerBtn:hover{
+    background-color: #a05e5a;
+}
+

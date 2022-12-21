@@ -7,7 +7,13 @@ html, body {
   -moz-osx-font-smoothing: grayscale;
   height: 100%;
   width: auto;
+  scroll-behavior: smooth;
   
+}
+
+body::-webkit-scrollbar{
+  visibility: hidden;
+  width: 0px;
 }
 
 #root{

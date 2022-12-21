@@ -1,7 +1,7 @@
 #Home{
     
     display: grid;
-    grid-template-rows: 20% 60% 20%;
+    grid-template-rows: 30% 50% 20%;
     grid-column-start: 2;
     grid-column-end: 3;
 }
@@ -15,11 +15,13 @@
     display: grid;
     background-color: #E5DDD5;
     grid-template-columns: 1fr 10fr;
+    height: 100%;
 }
 
 .currentReadContainer{
     display: grid;
-    grid-template-columns: repeat(5, 20%);
+    grid-template-columns: repeat(10, 10%);
+    gap: 10px;
 }
 
 .dummyRead{
@@ -29,9 +31,11 @@
 }
 
 .dummyRead img{
-    width: 25%;
+    max-width: 100%;
+    height: auto;
 }
 #HomeRecentPosts{
+    
     background-color: #C39F97;
     gap: 10px;
     align-items: center;
@@ -41,39 +45,82 @@
 #HomeRecentPosts p{
     margin: 0;
     margin-bottom: 10px;
+    color: #E5DDD5;
+    font-weight: bold;
 }
 .blogContainer{
+    overflow: scroll;
     display: flex;
     flex-wrap: wrap;
     height: 90%;
     gap: 10px;
 }
 
+.blogContainer::-webkit-scrollbar{
+    background-color: #C39F97;
+}
+
+.blogContainer::-webkit-scrollbar-thumb{
+    background-color: #a96e6c;
+}
+
+.blogContainer::-webkit-scrollbar-corner{
+    background-color: #C39F97;
+}
+
+
 .dummyBlog{
     display: grid;
     grid-template-columns: 50% 50%;
     grid-template-rows: 50% 50%;
     background-color: #934C47;
-    height: auto;
-    width: 20%;
-    height: 40%;
+    width: 25%;
+    min-height: fit-content;
+
     text-align: center;
     align-items: center;
-    padding: 20px;
+    padding: 10px;
+    
+}
+
+.blogDescrip{
+    overflow: scroll;
+    color: #E5DDD5;
+    font-size: 12px;
+    grid-column-start: 2;
+    grid-row-start: 1;
+    grid-row-end: 3;
+    padding: 5px;
+}
+
+.blogDescrip::-webkit-scrollbar{
+    background-color: #934C47;
+    
+}
+
+.blogDescrip::-webkit-scrollbar-corner{
+    background-color: #934C47;
 }
 
 .dummyBlog img{
+
     grid-column-start: 1;
     grid-column-end: 2;
     grid-row-start: 1;
     grid-row-end: 3;
-    width: 80%;
+    max-width: 100%;
+    height: auto;
 }
 
 .dummyBlogButton{
     background-color: #a96e6c;
+    color: #E5DDD5;
     border-style: none;
     justify-self: center;
+    align-self: flex-end;
+    grid-row-start: 2;
+    grid-column-start: 2;
+    margin: 5px;
 }
 
 #HomeIGPosts{
