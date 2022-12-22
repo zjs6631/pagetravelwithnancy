@@ -1,9 +1,12 @@
 #Header{
     display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-end;
     width: 100%;
     background-color: #934C47;
     grid-column-start: 1;
     grid-column-end: 3;
+    z-index: 3;
 
 }
 
@@ -24,6 +27,7 @@
     width: 15%;
     height: 100%;
     color: #E5DDD5;
+    background-color: #934C47;
 }
 
 .headerBtn{
@@ -36,4 +40,22 @@
 .headerBtn:hover{
     background-color: #a05e5a;
 }
+
+#headerDropdown{
+    visibility: hidden;
+    z-index: 3;
+}
+
+#aboutTab:hover + #headerDropdown{
+   
+    visibility: visible;
+    opacity: .9;
+}
+
+#headerDropdown:hover{
+    
+    visibility: visible;
+    opacity: .9;
+}
+
 

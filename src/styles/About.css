@@ -1,0 +1,51 @@
+.aboutContainer{
+    background-color: #E5DDD5;
+    color: #934C47;
+    display: grid;
+    grid-template-columns: 40% 60%;
+}
+
+.aboutContainer h1{
+    grid-column-start: 1;
+    grid-column-end: 2;
+}
+
+.exampleLi{
+    grid-column-start: 1;
+    grid-column-end: 2;
+    grid-row-start: 2;
+    grid-row-end: 3;
+}
+
+.examplePic{
+    grid-column-start: 2;
+    grid-column-end: 3;
+    grid-row-start: 1;
+    grid-row-end: 3;
+    border-style: solid;
+    height: 400px;
+    width: 400px;
+}
+
+.examplePara{
+    grid-row-start: 3;
+    grid-row-end: 4;
+    grid-column-start: 1;
+    grid-column-end: 2;
+}
+
+#morePic{
+    display: flex;
+    grid-column-start: 1;
+    grid-column-end: 2;
+    grid-row-start: 4;
+    grid-row-end: 5;
+    border-style: solid;
+    height: 200px;
+}
+
+#morePic div{
+    border-style: solid;
+    width: 33%;
+    height: 200px;
+}

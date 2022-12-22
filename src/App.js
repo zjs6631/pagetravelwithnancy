@@ -7,11 +7,14 @@ import Home from './components/Home';
 import About from './components/About';
 import Posts from './components/Posts';
 import Shops from './components/Shops';
+import BooksRead from './components/BooksRead';
+import RatingScale from './components/RatingScale';
 import './styles/Header.css';
 import './styles/Home.css';
 import './styles/Sidebar.css';
 import './styles/Posts.css';
 import './styles/Shops.css';
+import './styles/About.css';
 
 function App() {
   return (
@@ -23,6 +26,8 @@ function App() {
         <Route path='posts' element ={<Posts />}/>
         <Route path='shops' element ={<Shops />}/>
         <Route path='about' element ={<About />}/>
+        <Route path='scale' element ={<RatingScale/>}/>
+        <Route path='booksread' element={<BooksRead/>}/>
       </Routes>
 
       <Sidebar />
