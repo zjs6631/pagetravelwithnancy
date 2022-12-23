@@ -12,8 +12,8 @@ const Header = () =>{
                 <Link to='/about'><button className='headerBtn' id='aboutBtn'>About Me</button></Link>
             </div>
             <div className='HeaderLink' id='headerDropdown'>
-                <Link to='/scale'><button className='headerBtn'>Rating Scale</button></Link>
-                <Link to='/booksread'><button className='headerBtn'>Books Read 2023</button></Link>
+                <Link to='/scale'><button className='headerBtn'>-Rating Scale</button></Link>
+                <Link to='/booksread'><button className='headerBtn'>-Books Read 2023</button></Link>
             </div>
         </div>
     )

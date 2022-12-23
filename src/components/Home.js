@@ -16,6 +16,10 @@ const Home = () =>{
                     <p>Accidentally Amy</p>
                     <img src={exampleBook}/>
                 </div>
+                <div className='dummyRead'>
+                    <p>Accidentally Amy</p>
+                    <img src={exampleBook}/>
+                </div>
                 </div>
             </div>
             <div id='HomeRecentPosts'>
@@ -48,7 +52,21 @@ const Home = () =>{
                 </div>
                 </div>
             </div>
-            <div id='HomeIGPosts'>IG posts:</div>
+            <div id='HomeIGPosts'>
+                <p>IG posts:</p>
+                <div className='igPostContainer'>
+                    <div>
+                        <img src={examplePic}></img>
+                    </div>
+                    <div>
+                        <img src={examplePic}></img>
+                    </div>
+                    <div>
+                        <img src={examplePic}></img>
+                    </div>
+                </div>
+            
+            </div>
         </div>
     )
 }

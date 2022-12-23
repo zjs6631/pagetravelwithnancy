@@ -2,5 +2,5 @@
   height: 100%;
   display: grid;
   grid-template-columns: 18% auto;
-  grid-template-rows: 15% auto;
+  grid-template-rows: auto;
 }

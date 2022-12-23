@@ -1,7 +1,7 @@
 #Home{
-    
+    max-width: 100%;
     display: grid;
-    grid-template-rows: 30% 50% 20%;
+    grid-template-rows: auto;
     grid-column-start: 2;
     grid-column-end: 3;
 }
@@ -12,21 +12,36 @@
 }
 
 #HomeCurrentRead{
-    display: grid;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    color: #934C47;
+    font-weight: bold;
     background-color: #E5DDD5;
-    grid-template-columns: 1fr 10fr;
-    height: 100%;
+    min-height: 100%;
+    max-width: 100%;
+    padding-bottom: 20px;
+    
+}
+
+#HomeCurrentRead .sectionHeader{
+    padding-bottom: 0;
+    margin: 0;
+    margin-top: 10px;
 }
 
 .currentReadContainer{
-    display: grid;
-    grid-template-columns: repeat(10, 10%);
+    display: flex;
+    flex-direction: row;
+    min-height: fit-content;
+    max-width: 100%;
     gap: 10px;
+    padding-left: 10px;
 }
 
 .dummyRead{
-    height: 100%;
-    width: 100%;
+    max-width: 20%;
+    min-height: 100%;
     text-align: center;
 }
 
@@ -52,7 +67,8 @@
     overflow: scroll;
     display: flex;
     flex-wrap: wrap;
-    height: 90%;
+    min-height: 90%;
+    max-width: fit-content;
     gap: 10px;
 }
 
@@ -74,9 +90,10 @@
     grid-template-columns: 50% 50%;
     grid-template-rows: 50% 50%;
     background-color: #934C47;
-    width: 25%;
+    max-width: 40%;
     min-height: fit-content;
-
+    
+    
     text-align: center;
     align-items: center;
     padding: 10px;
@@ -86,11 +103,12 @@
 .blogDescrip{
     overflow: scroll;
     color: #E5DDD5;
-    font-size: 12px;
+    font-size: 1.1vw;
     grid-column-start: 2;
     grid-row-start: 1;
     grid-row-end: 3;
     padding: 5px;
+    
 }
 
 .blogDescrip::-webkit-scrollbar{
@@ -108,8 +126,8 @@
     grid-column-end: 2;
     grid-row-start: 1;
     grid-row-end: 3;
-    max-width: 100%;
-    height: auto;
+    max-width: 80%;
+    
 }
 
 .dummyBlogButton{
@@ -127,10 +145,41 @@
     background-color: #E5DDD5;
 }
 
+.igPostContainer{
+    display: flex;
+    flex-direction: row;
+    max-width: 100%;
+    max-height: fit-content;
+    gap: 10px;
+    padding: 10px;
+}
+
+.igPostContainer div{
+    max-width: 15%;
+}
+
+.igPostContainer div img{
+    max-width: 100%;
+}
+
 @media screen and (max-width: 500px) {
     #Home{
         grid-column-start: 1;
         grid-column-end: 3;
+    }
+
+    .currentReadContainer{
+        display: flex;
+        flex-direction: row;
+        overflow: scroll;
+    }
+
+    .dummyBlog{
+        max-width: 90%;
+    }
+
+    .dummyRead{
+        max-width: fit-content;
     }
 
 }

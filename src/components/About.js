@@ -23,7 +23,7 @@ const About = () =>{
         <div className='favAuthors'>
             <h3>Some of my fav Authors</h3>
             <ol>
-                <li>author 1</li>
+                <li>author 4</li>
                 <li>author 2</li>
                 <li>author 3</li>
             </ol>
