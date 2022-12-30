@@ -9,15 +9,15 @@ const Home = () =>{
                 <p className='sectionHeader'>Currently reading:</p>
                 <div className='currentReadContainer'> 
                 <div className='dummyRead'>
-                    <p>Accidentally Amy</p>
                     <img src={exampleBook}/>
                 </div>
                 <div className='dummyRead'>
-                    <p>Accidentally Amy</p>
                     <img src={exampleBook}/>
                 </div>
                 <div className='dummyRead'>
-                    <p>Accidentally Amy</p>
+                    <img src={exampleBook}/>
+                </div>
+                <div className='dummyRead'>
                     <img src={exampleBook}/>
                 </div>
                 </div>

@@ -19,14 +19,13 @@
     color: #934C47;
     font-weight: bold;
     background-color: #E5DDD5;
-    min-height: 100%;
+    min-height: auto;
     max-width: 100%;
-    padding-bottom: 20px;
     
 }
 
 #HomeCurrentRead .sectionHeader{
-    padding-bottom: 0;
+    padding-bottom: 10px;
     margin: 0;
     margin-top: 10px;
 }
@@ -34,34 +33,39 @@
 .currentReadContainer{
     display: flex;
     flex-direction: row;
-    min-height: fit-content;
+    min-height: auto;
     max-width: 100%;
     gap: 10px;
-    padding-left: 10px;
+    margin-left: 10px;
+    margin-right: 10px;
+    border-bottom-style: solid;
+    border-bottom-width: 1px;
 }
 
 .dummyRead{
-    max-width: 20%;
-    min-height: 100%;
+    max-width: 10%;
+    min-height: auto;
     text-align: center;
 }
 
 .dummyRead img{
+   
     max-width: 100%;
-    height: auto;
+    min-height: auto;
 }
 #HomeRecentPosts{
-    
-    background-color: #C39F97;
+    color: #934C47;
+    background-color: #E5DDD5;
     gap: 10px;
     align-items: center;
-    padding: 10px;
+    padding-left: 10px;
+   
 }
 
 #HomeRecentPosts p{
     margin: 0;
     margin-bottom: 10px;
-    color: #E5DDD5;
+    color: #934C47;
     font-weight: bold;
 }
 .blogContainer{
@@ -73,7 +77,7 @@
 }
 
 .blogContainer::-webkit-scrollbar{
-    background-color: #C39F97;
+    background-color: #E5DDD5;
 }
 
 .blogContainer::-webkit-scrollbar-thumb{
@@ -81,7 +85,7 @@
 }
 
 .blogContainer::-webkit-scrollbar-corner{
-    background-color: #C39F97;
+    background-color: #E5DDD5;
 }
 
 
@@ -89,20 +93,20 @@
     display: grid;
     grid-template-columns: 50% 50%;
     grid-template-rows: 50% 50%;
-    background-color: #934C47;
+    background-color: #E5DDD5;
     max-width: 40%;
     min-height: fit-content;
-    
-    
     text-align: center;
     align-items: center;
     padding: 10px;
-    
+    border-bottom: #934C47;
+    border-bottom-width: 1px;
+    border-bottom-style: solid;
 }
 
 .blogDescrip{
     overflow: scroll;
-    color: #E5DDD5;
+    
     font-size: 1.1vw;
     grid-column-start: 2;
     grid-row-start: 1;
@@ -112,12 +116,12 @@
 }
 
 .blogDescrip::-webkit-scrollbar{
-    background-color: #934C47;
+    background-color: #E5DDD5;
     
 }
 
 .blogDescrip::-webkit-scrollbar-corner{
-    background-color: #934C47;
+    background-color: #E5DDD5;
 }
 
 .dummyBlog img{
@@ -142,16 +146,28 @@
 }
 
 #HomeIGPosts{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    color: #934C47;
+    font-weight: bold;
     background-color: #E5DDD5;
+    min-height: auto;
+    max-width: 100%;
+    padding-left: 10px;
+}
+
+#HomeIGPosts p{
+    margin-top: 0px;
 }
 
 .igPostContainer{
     display: flex;
     flex-direction: row;
+    min-height: auto;
     max-width: 100%;
-    max-height: fit-content;
     gap: 10px;
-    padding: 10px;
+    padding-left: 10px;
 }
 
 .igPostContainer div{
@@ -174,12 +190,20 @@
         overflow: scroll;
     }
 
+    .currentReadContainer::-webkit-scrollbar{
+        display: none;
+    }
+
     .dummyBlog{
-        max-width: 90%;
+        max-width: 100%;
     }
 
     .dummyRead{
         max-width: fit-content;
+    }
+
+    .blogDescrip{
+        font-size: 2.0vw;
     }
 
 }
