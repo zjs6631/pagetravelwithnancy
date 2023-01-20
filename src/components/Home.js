@@ -1,57 +1,40 @@
 import React from 'react';
 import examplePic from '../images/exampleBlog.jpg';
 import exampleBook from '../images/exampleBook.jpg';
+import blogCover from '../images/BlogCover.png';
+import currentlyReading2 from '../images/currentlyReading2.png';
+import RatingScale from '../images/Rating_System.png';
+import WrapUp2022 from '../images/2022WrapUp.png';
+import AboutMe from '../images/ABOUT_ME_COVER.png';
+import ptwnLogo from '../images/ptwnlogo.png';
 
 const Home = () =>{ 
     return(
         <div id='Home'>
+            <div id='HomeName'>
+                <h1 id='pageName'>Page Travel With Nancy</h1>
+                <h3>For all your bookish content</h3>
+            </div>
             <div id='HomeCurrentRead'>
-                <p className='sectionHeader'>Currently reading:</p>
-                <div className='currentReadContainer'> 
-                <div className='dummyRead'>
-                    <img src={exampleBook}/>
+                <img src={currentlyReading2} />
+            </div>
+            <div id='HomeThreeLinks'>
+                <div class='threelinks'>
+                    <div id='ratingScale'></div>
+                    <h3>See My Rating Scale Here</h3>
                 </div>
-                <div className='dummyRead'>
-                    <img src={exampleBook}/>
+                <div class='threelinks'>
+                    <div id='wrapup'></div>
+                    <h3>Want to know what I read in 2022?</h3>
                 </div>
-                <div className='dummyRead'>
-                    <img src={exampleBook}/>
-                </div>
-                <div className='dummyRead'>
-                    <img src={exampleBook}/>
-                </div>
+                <div class='threelinks'>
+                    <div id='aboutmeicon'></div>
+                    <h3>Learn more about me!</h3>
                 </div>
             </div>
-            <div id='HomeRecentPosts'>
-                <p className='sectionHeader'>Recent blog posts:</p>
-                <div className='blogContainer'>
-                <div className='dummyBlog'>
-                    <img src={examplePic}></img>
-                    <p className='blogDescrip'>Amet tempor ipsum aliquip ea ipsum qui labore ipsum Lorem. Dolor exercitation deserunt sint enim ullamco nostrud dolore est mollit consectetur. Ipsum cillum ea et in adipisicing mollit et amet nisi. Reprehenderit veniam in consequat exercitation sunt fugiat sit non. Qui mollit Lorem ex culpa consequat ut laboris incididunt.</p>
-                    <button className='dummyBlogButton'>Read More! -></button>
-                </div>
-                <div className='dummyBlog'>
-                    <img src={examplePic}></img>
-                    <p className='blogDescrip'>Nulla id occaecat fugiat eu proident dolor eiusmod reprehenderit elit qui. Labore proident cillum ad ipsum reprehenderit quis do Lorem aliqua. Do in est veniam laborum consequat. Cillum ut dolor anim elit cillum aliqua aute. Qui do anim do aliquip ipsum dolore.</p>
-                    <button className='dummyBlogButton'>Read More! -></button>
-                </div>
-                <div className='dummyBlog'>
-                    <img src={examplePic}></img>
-                    <p className='blogDescrip'>Enim non pariatur deserunt id excepteur aliquip enim pariatur ullamco proident elit. In pariatur proident commodo irure. In velit reprehenderit non veniam ad. Nostrud amet dolor labore laboris eiusmod officia consectetur labore quis exercitation excepteur officia ad voluptate. Ad incididunt ad culpa consequat. Anim sint ad exercitation dolore non esse aliqua. Quis quis eiusmod ullamco occaecat sit fugiat non.</p>
-                    <button className='dummyBlogButton'>Read More! -></button>
-                </div>
-                <div className='dummyBlog'>
-                    <img src={examplePic}></img>
-                    <p className='blogDescrip'>Occaecat consectetur ex et sunt duis in fugiat velit qui culpa nulla labore. Laboris sunt labore ipsum nisi culpa excepteur sit sunt ullamco duis aliquip elit sit. Sunt aute quis veniam pariatur incididunt amet exercitation. Eiusmod aliqua voluptate pariatur aute minim duis esse esse adipisicing aliqua ullamco.</p>
-                    <button className='dummyBlogButton'>Read More! -></button>
-                </div>
-                <div className='dummyBlog'>
-                    <img src={examplePic}></img>
-                    <p className='blogDescrip'>Ad reprehenderit reprehenderit nulla ad aute eiusmod non. Consequat consectetur ullamco do voluptate commodo sunt proident exercitation non reprehenderit nostrud duis ipsum eu. Cupidatat cillum reprehenderit reprehenderit eiusmod aliquip adipisicing id mollit cillum excepteur incididunt. Pariatur culpa sunt officia nulla mollit veniam do ad veniam est. Ullamco qui fugiat nisi Lorem occaecat reprehenderit Lorem. Proident proident eu ex labore. Ipsum excepteur pariatur pariatur ipsum.</p>
-                    <button className='dummyBlogButton'>Read More! -></button>
-                </div>
-                </div>
-            </div>
+            
+            
+            
             <div id='HomeIGPosts'>
                 <p>IG posts:</p>
                 <div className='igPostContainer'>

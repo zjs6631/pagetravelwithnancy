@@ -1,5 +1,4 @@
 #Home{
-    
     max-width: 100%;
     display: grid;
     grid-template-rows: auto;
@@ -12,169 +11,65 @@
     padding-left: 10px;
 }
 
-#HomeCurrentRead{
-    display: flex;
-    flex-direction: column;
-    flex-wrap: nowrap;
-    color: #934C47;
-    font-weight: bold;
-    background-color: #E5DDD5;
-    min-height: auto;
-    max-width: 100%;
-    
-}
-
-#HomeCurrentRead .sectionHeader{
-    padding-bottom: 10px;
-    margin: 0;
-    margin-top: 10px;
-}
-
-.currentReadContainer{
-    display: flex;
-    flex-direction: row;
-    min-height: auto;
-    max-width: 100%;
-    gap: 10px;
-    margin-left: 10px;
-    margin-right: 10px;
-    border-bottom-style: solid;
-    border-bottom-width: 1px;
-}
-
-.dummyRead{
-    max-width: 10%;
-    min-height: auto;
-    text-align: center;
-}
-
-.dummyRead img{
-   
-    max-width: 100%;
-    min-height: auto;
-}
-#HomeRecentPosts{
-    color: #934C47;
-    background-color: #E5DDD5;
-    gap: 10px;
-    align-items: center;
-    padding-left: 10px;
-   
-}
-
-#HomeRecentPosts p{
-    margin: 0;
-    margin-bottom: 10px;
-    color: #934C47;
-    font-weight: bold;
-}
-.blogContainer{
-    overflow: scroll;
-    display: flex;
-    flex-wrap: wrap;
-    max-width: 100%;
-    gap: 10px;
-}
-
-.blogContainer::-webkit-scrollbar{
-    background-color: #E5DDD5;
-}
-
-.blogContainer::-webkit-scrollbar-thumb{
-    background-color: #a96e6c;
-}
-
-.blogContainer::-webkit-scrollbar-corner{
-    background-color: #E5DDD5;
-}
-
-
-.dummyBlog{
+#HomeName{
     display: grid;
-    grid-template-columns: 50% 50%;
-    grid-template-rows: 50% 50%;
-    background-color: #E5DDD5;
-    max-width: 40%;
-    min-height: fit-content;
-    text-align: center;
+    justify-content: center;
     align-items: center;
-    padding: 10px;
-    border-bottom: #934C47;
-    border-bottom-width: 1px;
-    border-bottom-style: solid;
+    text-align: center;
+    background-image: url('../images/BlogCover.png');
+    filter:opacity(.7);
+    min-height: 300px;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
-.blogDescrip{
-    overflow: scroll;
-    
-    font-size: 1.1vw;
-    grid-column-start: 2;
-    grid-row-start: 1;
-    grid-row-end: 3;
-    padding: 5px;
-    
+#HomeName h1{
+    filter: opacity();
+    color: black;
+    font-size: 2.5rem;
 }
 
-.blogDescrip::-webkit-scrollbar{
-    background-color: #E5DDD5;
-    
+#HomeName h3{
+    filter: opacity(1);
+    color: black;
+    font-size: 1.5rem;
 }
 
-.blogDescrip::-webkit-scrollbar-corner{
-    background-color: #E5DDD5;
-}
-
-.dummyBlog img{
-
-    grid-column-start: 1;
-    grid-column-end: 2;
-    grid-row-start: 1;
-    grid-row-end: 3;
-    max-width: 80%;
-    
-}
-
-.dummyBlogButton{
-    background-color: #a96e6c;
-    color: #E5DDD5;
-    border-style: none;
+#HomeCurrentRead{
+    display: grid;
     justify-self: center;
-    align-self: flex-end;
-    grid-row-start: 2;
-    grid-column-start: 2;
-    margin: 5px;
+    justify-items: center;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid rgb(126, 116, 116);
+    max-width: 90%;
 }
 
-#HomeIGPosts{
-    display: flex;
-    flex-direction: column;
-    flex-wrap: nowrap;
-    color: #934C47;
-    font-weight: bold;
-    background-color: #E5DDD5;
-    min-height: auto;
+#HomeCurrentRead img{
+    
     max-width: 100%;
-    padding-left: 10px;
 }
 
-#HomeIGPosts p{
-    margin-top: 0px;
-}
-
-.igPostContainer{
+#HomeThreeLinks{
     display: flex;
-    flex-direction: row;
-    min-height: auto;
     max-width: 100%;
-    gap: 10px;
-    padding-left: 10px;
 }
 
-.igPostContainer div{
-    max-width: 15%;
+#HomeThreeLinks div{
+    max-width: 33%;
 }
 
-.igPostContainer div img{
+#ratingScale{
+    max-width: 100%;
+    min-height: 50%;
+    background-image: url('../images/Rating_System.png');
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+.threelinks img{
     max-width: 100%;
 }
 

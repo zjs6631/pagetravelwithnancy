@@ -10,6 +10,14 @@
     grid-row-start: 2;
 }
 
+#sideBarBtn {
+    border-style: none;
+    width: 25px;
+    height: 25px;
+    background-color: #d28785;
+    align-self: flex-end;
+    transform: translateX(13px);
+}
 #SidebarImage{
     margin: 15%;
     display: grid;
@@ -21,9 +29,9 @@
 }
 
 #SidebarImage img{
-    height: 80%;
-    width: 100%;
-    border-radius: 50%;
+    min-height: auto;
+    max-width: 100%;
+    
 }
 
 #SidebarSummary{

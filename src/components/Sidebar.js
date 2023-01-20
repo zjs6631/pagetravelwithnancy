@@ -7,7 +7,12 @@ const Sidebar = () =>{
     return(
         <div id='Sidebar'>
             <div id='SidebarImage'><img src={nancyImg}></img></div>
-            <div id='SidebarSummary'><p>Excepteur ut culpa minim incididunt pariatur amet ut eu amet. Anim elit est anim culpa ea id et laboris aliquip nulla dolore ad. Tempor est nisi voluptate nostrud excepteur anim magna in. Tempor minim occaecat elit esse tempor.</p></div>
+            <button id='sideBarBtn'>←</button>
+            <div id='SidebarSummary'>
+                <p>Welcome fellow book lovers! Stick around to see the ramblings of this Slytherin-housed, Night-Court-belonging, True-crime-fanatic, Iced-Coffee-obsessed reader. You’ll find mostly romance, fantasy, and young adult reads with the occasional outlier. Through this blog, I’ll cover reviews, lists, and all things bookish faves. Happy Reading! </p>
+                <br></br>
+                <p>Side Note: The logo for PageTravelWithNancy may be changed in the near future. </p>
+            </div>
             <div id='SidebarLinks'>
                 <div className='sLink'><img src={goodreads}></img></div>
                 <div className='sLink'><img src={ig}></img></div>

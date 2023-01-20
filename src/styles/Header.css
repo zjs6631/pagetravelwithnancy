@@ -1,10 +1,11 @@
 #Header{
+    position: relative;
     display: flex;
     flex-wrap: wrap;
     justify-content: flex-end;
-    height: 125px;
+    height: 80px;
     max-width: 100%;
-    background-color: #934C47;
+    background-color: black;
     grid-column-start: 1;
     grid-column-end: 3;
     z-index: 3;
@@ -12,15 +13,35 @@
 }
 
 #HeaderLogo{
-    display: grid;
+    display: flex;
+    gap: 10px;
+    
     text-align: center;
     align-items: center;
     width: 40%;
     height: 100%;
     color: #E5DDD5;
-    font-size: 1.5vw;
+    font-size: .5rem;
     
     
+}
+
+#HeaderLogo h1{
+    margin: 0;
+}
+
+#headerLogo{
+    display: grid;
+    max-width: 10%;
+    padding-left: 10px;
+    
+}
+
+#headerLogo img{
+    
+    min-height: auto;
+    max-width: 100%;
+    align-self:center;
 }
 
 .HeaderLink{
@@ -30,18 +51,20 @@
     width: 15%;
     height: 100%;
     color: #E5DDD5;
-    background-color: #934C47;
+    background-color: black;
     
 }
 
 .headerBtn{
     border-style: none;
-    background-color: #934C47;
+    background-color: black;
     color:#E5DDD5;
-    font-size: 2.3vw;
+    font-size: 1.0em;
 }
 
 .headerBtn:hover{
+    height: 100%;
+    width: 100%;
     background-color: #a05e5a;
 }
 
