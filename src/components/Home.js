@@ -4,12 +4,15 @@ import currentlyReading2 from '../images/currentlyReading2.png';
 import NewestPost from '../images/NewestPost.png';
 
 
+
 const Home = () =>{ 
 
     
     const [posts, setPosts] = useState([]);
+    const [images, setImages] = useState([]);
 
     useEffect(()=>{
+
         fetch('http://localhost:3000/', {method: 'get',
         dataType: 'json',
         headers: {
@@ -25,6 +28,7 @@ const Home = () =>{
             .catch((err) =>{
                 console.log(err.message);
             })
+        
     }, []);
 
     
@@ -60,7 +64,7 @@ const Home = () =>{
                 {posts.map((post)=>{
                     return(
                     <div className='recentPost' key={uniqid()}>
-                        <img src={post.img[0]}/>
+                        <img src= {`/images/${post.img[0]}`}/>
                     </div>
                     )
                 })}
