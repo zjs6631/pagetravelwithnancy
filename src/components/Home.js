@@ -60,6 +60,7 @@ const Home = () =>{
                 <img src={NewestPost} />
                 <button className='viewNewPost'>View Post</button>
             </div>
+            <h3 className='sectionHeader'>Recent Posts:</h3>
             <div id='lastSix'>
                 {posts.map((post)=>{
                     return(
