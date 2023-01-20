@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import uniqid from 'uniqid';
 import currentlyReading2 from '../images/currentlyReading2.png';
 import NewestPost from '../images/NewestPost.png';
-
+import {Link} from 'react-router-dom';
 
 
 const Home = () =>{ 
@@ -10,6 +10,7 @@ const Home = () =>{
     
     const [posts, setPosts] = useState([]);
     const [images, setImages] = useState([]);
+    const [newestPost, setNewestPost] = useState([]);
 
     useEffect(()=>{
 
@@ -22,8 +23,10 @@ const Home = () =>{
             .then(response => response.json()
             )
             .then(response => {
-                console.log(response);
+                
                 setPosts(response);
+                
+                setNewestPost(response[response.length - 1]);
             })
             .catch((err) =>{
                 console.log(err.message);
@@ -56,10 +59,13 @@ const Home = () =>{
                     <h3>Learn more about me!</h3>
                 </div>
             </div>
-            <div id='newestPost'>
-                <img src={NewestPost} />
-                <button className='viewNewPost'>View Post</button>
-            </div>
+            <Link to={`/posts/post`}>
+                <div id='newestPost'>
+                    <img src={NewestPost} />
+                    <button className='viewNewPost'>View Post</button>
+                </div>
+            </Link>
+            
             <h3 className='sectionHeader'>Recent Posts:</h3>
             <div id='lastSix'>
                 {posts.map((post)=>{

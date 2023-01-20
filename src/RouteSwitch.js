@@ -6,6 +6,7 @@ import Posts from "./components/Posts";
 import Shops from "./components/Shops";
 import BooksRead from "./components/BooksRead";
 import RatingScale from "./components/RatingScale";
+import Post from "./components/Post";
 
 //RouteSwitch handles all of our routes
 //"/*" is needed to be able to transition between the pages from the home page
@@ -17,7 +18,9 @@ const RouteSwitch = () =>{
         <Routes>
             <Route path="/*" element={<App />}>
                     <Route index element = {<Home />}/>
-                    <Route path='posts' element ={<Posts />}/>
+                    <Route path='posts' element ={<Posts />}>
+                        <Route index element={<Post />}/>
+                    </Route>
                     <Route path='shops' element ={<Shops />}/>
                     <Route path='about' element ={<About />}/>
                     <Route path="booksread" element ={<BooksRead/>}/>
