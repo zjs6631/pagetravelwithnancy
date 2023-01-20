@@ -23,6 +23,7 @@
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
+    
 }
 
 #HomeName h1{
@@ -41,10 +42,12 @@
     display: grid;
     justify-self: center;
     justify-items: center;
-    padding-top: 15px;
-    padding-bottom: 15px;
-    border-bottom: 1px solid rgb(126, 116, 116);
-    max-width: 90%;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    
+    
+    max-width: 80%;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
 #HomeCurrentRead img{
@@ -55,22 +58,100 @@
 #HomeThreeLinks{
     display: flex;
     max-width: 100%;
+    padding-top: 20px;
 }
 
 #HomeThreeLinks div{
-    max-width: 33%;
+    display: grid;
+    justify-items: center;
+    
+    align-items: flex-end;
+    
+}
+
+.threelinks{
+    
+    min-width: 30%;
+    margin: 15px;
+}
+.threelinks img{
+    
+    max-width: 100%;
+    
 }
 
 #ratingScale{
-    max-width: 100%;
-    min-height: 50%;
-    background-image: url('../images/Rating_System.png');
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    background-image: url( '../images/Rating_System.png');
+    background-size:cover;
     background-position: center;
-    background-size: contain;
-    background-repeat: no-repeat;
+    height: 300px;
+    width: 100%;
 }
-.threelinks img{
+
+#ratingScale img{
+    
+}
+
+#wrapup{
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    background-image: url( '../images/2022WrapUp.png');
+    background-size:cover;
+    background-position: center;
+    height: 300px;
+    width: 100%;
+}
+
+#wrapup img{
+
+}
+
+#aboutmeicon{
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    background-image: url( '../images/ptwnlogo.png');
+    background-size:cover;
+    background-position: center;
+    height: 300px;
+    width: 100%;
+}
+
+#aboutmeicon img{
+
+}
+
+#newestPost{
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
+    margin-left: 15px;
+    margin-right: 15px;
+    max-width: 40%;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+
+
+#newestPost img{
     max-width: 100%;
+    grid-column-start: 1;
+    grid-row-start: 1;
+}
+
+#newestPost button{
+    
+    z-index: 3;
+    max-height: 30px;
+    justify-self: center;
+    align-self: center;
+    grid-column-start: 1;
+    grid-row-start: 1;
+    font-size: 1.5vw;
+    font-weight: bolder;
+    border-color: #a96e6c;
+    border-width: 5px;
+    border-style: solid;
+    color:#a96e6c;
+    background: white;
 }
 
 @media screen and (max-width: 500px) {

@@ -27,3 +27,23 @@
                     <button className='dummyBlogButton'>Read More! -></button>
                 </div>
                 </div>
+
+
+                <div id='HomeIGPosts'>
+                <p>IG posts:</p>
+                <div className='igPostContainer'>
+                    <div>
+                        <img src={examplePic}></img>
+                    </div>
+                    <div>
+                        <img src={examplePic}></img>
+                    </div>
+                    <div>
+                        <img src={examplePic}></img>
+                    </div>
+                </div>
+</div>
+
+</div>
+
+

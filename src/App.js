@@ -1,4 +1,4 @@
-
+import React, { useEffect, useState } from 'react';
 import './App.css';
 import {Routes, Route} from 'react-router-dom';
 import Header from './components/Header';
@@ -14,9 +14,11 @@ import './styles/Home.css';
 import './styles/Sidebar.css';
 import './styles/Posts.css';
 import './styles/Shops.css';
-import './styles/About.css';
 
 function App() {
+
+  
+  
   return (
     <div className="App">
       <Header />
@@ -26,8 +28,6 @@ function App() {
         <Route path='posts' element ={<Posts />}/>
         <Route path='shops' element ={<Shops />}/>
         <Route path='about' element ={<About />}/>
-        <Route path='scale' element ={<RatingScale/>}/>
-        <Route path='booksread' element={<BooksRead/>}/>
       </Routes>
 
       <Sidebar />

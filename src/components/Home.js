@@ -1,14 +1,34 @@
-import React from 'react';
-import examplePic from '../images/exampleBlog.jpg';
-import exampleBook from '../images/exampleBook.jpg';
-import blogCover from '../images/BlogCover.png';
+import React, { useEffect, useState } from 'react';
+import uniqid from 'uniqid';
 import currentlyReading2 from '../images/currentlyReading2.png';
-import RatingScale from '../images/Rating_System.png';
-import WrapUp2022 from '../images/2022WrapUp.png';
-import AboutMe from '../images/ABOUT_ME_COVER.png';
-import ptwnLogo from '../images/ptwnlogo.png';
+import NewestPost from '../images/NewestPost.png';
+
 
 const Home = () =>{ 
+
+    
+    const [posts, setPosts] = useState([]);
+
+    useEffect(()=>{
+        fetch('http://localhost:3000/', {method: 'get',
+        dataType: 'json',
+        headers: {
+          'Accept': 'application/json',
+          'Content-Type': 'application/json'
+        }})
+            .then(response => response.json()
+            )
+            .then(response => {
+                console.log(response);
+                setPosts(response);
+            })
+            .catch((err) =>{
+                console.log(err.message);
+            })
+    }, []);
+
+    
+
     return(
         <div id='Home'>
             <div id='HomeName'>
@@ -19,37 +39,36 @@ const Home = () =>{
                 <img src={currentlyReading2} />
             </div>
             <div id='HomeThreeLinks'>
-                <div class='threelinks'>
+                <div className='threelinks'>
                     <div id='ratingScale'></div>
                     <h3>See My Rating Scale Here</h3>
                 </div>
-                <div class='threelinks'>
+                <div className='threelinks'>
                     <div id='wrapup'></div>
                     <h3>Want to know what I read in 2022?</h3>
                 </div>
-                <div class='threelinks'>
+                <div className='threelinks'>
                     <div id='aboutmeicon'></div>
                     <h3>Learn more about me!</h3>
                 </div>
             </div>
-            
-            
-            
-            <div id='HomeIGPosts'>
-                <p>IG posts:</p>
-                <div className='igPostContainer'>
-                    <div>
-                        <img src={examplePic}></img>
-                    </div>
-                    <div>
-                        <img src={examplePic}></img>
-                    </div>
-                    <div>
-                        <img src={examplePic}></img>
-                    </div>
-                </div>
-            
+            <div id='newestPost'>
+                <img src={NewestPost} />
+                <button className='viewNewPost'>View Post</button>
             </div>
+            <div id='lastSix'>
+                {posts.map((post)=>{
+                    return(
+                    <div className='recentPost' key={uniqid()}>
+                        <img src={post.img[0]}/>
+                    </div>
+                    )
+                })}
+            </div>
+            
+            
+            
+            
         </div>
     )
 }
