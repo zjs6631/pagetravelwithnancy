@@ -2,6 +2,10 @@ import React from 'react';
 import examplePic from '../images/exampleBlog.jpg'
 
 const Posts = () =>{
+
+        
+
+
     return(
     <div className='postsPage'>
         <h1>Blog posts:</h1>

@@ -19,8 +19,9 @@ const RouteSwitch = () =>{
             <Route path="/*" element={<App />}>
                     <Route index element = {<Home />}/>
                     <Route path='posts' element ={<Posts />}>
-                        <Route index element={<Post />}/>
                     </Route>
+                    <Route index element={<Post />}/>
+                    
                     <Route path='shops' element ={<Shops />}/>
                     <Route path='about' element ={<About />}/>
                     <Route path="booksread" element ={<BooksRead/>}/>

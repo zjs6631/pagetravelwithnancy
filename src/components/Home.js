@@ -59,7 +59,7 @@ const Home = () =>{
                     <h3>Learn more about me!</h3>
                 </div>
             </div>
-            <Link to={`/posts/post`}>
+            <Link to={`/post`}>
                 <div id='newestPost'>
                     <img src={NewestPost} />
                     <button className='viewNewPost'>View Post</button>
