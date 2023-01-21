@@ -15,6 +15,7 @@ import './styles/Home.css';
 import './styles/Sidebar.css';
 import './styles/Posts.css';
 import './styles/Shops.css';
+import './styles/Post.css';
 
 function App() {
 

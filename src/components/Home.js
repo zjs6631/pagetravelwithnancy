@@ -59,7 +59,7 @@ const Home = () =>{
                     <h3>Learn more about me!</h3>
                 </div>
             </div>
-            <Link to={`/post`}>
+            <Link to={`/post`} state={{post:posts[0]}}>
                 <div id='newestPost'>
                     <img src={NewestPost} />
                     <button className='viewNewPost'>View Post</button>
@@ -70,9 +70,13 @@ const Home = () =>{
             <div id='lastSix'>
                 {posts.map((post)=>{
                     return(
+                    
                     <div className='recentPost' key={uniqid()}>
+                        <Link to={'/post'} state={{post: post}}>
                         <img src= {`/images/${post.img[0]}`}/>
+                        </Link>
                     </div>
+                    
                     )
                 })}
             </div>
