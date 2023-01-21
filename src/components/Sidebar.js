@@ -4,8 +4,22 @@ import goodreads from '../images/goodreads.png';
 import ig from '../images/instagram.png';
 import gift from '../images/gift.png';
 const Sidebar = () =>{
+
+    const observer = new IntersectionObserver((entires)=>{
+        entires.forEach((entry)=>{
+            if(entry.isIntersecting){
+                entry.target.classList.add('show');
+            } else {
+                //entry.target.classList.remove('show')
+            }
+        })
+    });
+
+    const hiddenElements = document.querySelectorAll('.hidden');
+    hiddenElements.forEach((el)=> observer.observe(el));
+
     return(
-        <div id='Sidebar'>
+        <div id='Sidebar' className='hidden'>
             <div id='SidebarImage'><img src={nancyImg}></img></div>
             <button id='sideBarBtn'>←</button>
             <div id='SidebarSummary'>

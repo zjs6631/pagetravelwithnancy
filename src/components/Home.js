@@ -7,7 +7,19 @@ import {Link} from 'react-router-dom';
 
 const Home = () =>{ 
 
-    
+    const observer = new IntersectionObserver((entires)=>{
+        entires.forEach((entry)=>{
+            if(entry.isIntersecting){
+                entry.target.classList.add('show');
+            } else {
+                //entry.target.classList.remove('show')
+            }
+        })
+    });
+
+    const hiddenElements = document.querySelectorAll('.hidden');
+    hiddenElements.forEach((el)=> observer.observe(el));
+
     const [posts, setPosts] = useState([]);
     const [images, setImages] = useState([]);
     const [newestPost, setNewestPost] = useState([]);
@@ -38,14 +50,14 @@ const Home = () =>{
 
     return(
         <div id='Home'>
-            <div id='HomeName'>
+            <div id='HomeName' className='hidden'>
                 <h1 id='pageName'>Page Travel With Nancy</h1>
                 <h3>For all your bookish content</h3>
             </div>
-            <div id='HomeCurrentRead'>
+            <div id='HomeCurrentRead' className='hidden'>
                 <img src={currentlyReading2} />
             </div>
-            <div id='HomeThreeLinks'>
+            <div id='HomeThreeLinks' className='hidden'>
                 <div className='threelinks'>
                     <div id='ratingScale'></div>
                     <h3>See My Rating Scale Here</h3>
@@ -60,14 +72,14 @@ const Home = () =>{
                 </div>
             </div>
             <Link to={`/post`} state={{post:posts[0]}}>
-                <div id='newestPost'>
+                <div id='newestPost' className='hidden'>
                     <img src={NewestPost} />
                     <button className='viewNewPost'>View Post</button>
                 </div>
             </Link>
             
             <h3 className='sectionHeader'>Recent Posts:</h3>
-            <div id='lastSix'>
+            <div id='lastSix' className='hidden'>
                 {posts.map((post)=>{
                     return(
                     

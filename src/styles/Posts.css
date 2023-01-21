@@ -1,6 +1,6 @@
 .postsPage{
-    background-color: #E5DDD5;
-    color: #934C47;
+    background-color: white;
+    color: black;
 }
 
 .postsPage h1{
@@ -17,7 +17,7 @@
     display: grid;
     grid-template-columns: 50% 50%;
     grid-template-rows: 50% 50%;
-    background-color: #934C47;
+    background-color: white;
     width: 40%;
     height: auto;
     text-align: center;

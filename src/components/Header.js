@@ -3,10 +3,22 @@ import { Link } from 'react-router-dom';
 import ptwnlogo from '../images/ptwnlogo.png'
 
 const Header = () =>{
+
+    const observer = new IntersectionObserver((entires)=>{
+        entires.forEach((entry)=>{
+            if(entry.isIntersecting){
+                entry.target.classList.add('show');
+            } else {
+                //entry.target.classList.remove('show')
+            }
+        })
+    });
+
+    const hiddenElements = document.querySelectorAll('.hidden');
+    hiddenElements.forEach((el)=> observer.observe(el));
+
     return(
-        <div id='Header'>
-            
-            
+        <div id='Header' className='hidden'>
             
             <div id='HeaderLogo'>
                 <img src={ptwnlogo} id='headerLogo'/>
