@@ -2,50 +2,51 @@
     background-color: #E5DDD5;
     color: #934C47;
     display: grid;
-    grid-template-columns: 40% 60%;
+    grid-template-rows: 3fr 6fr 5fr 5fr 1.5fr 2fr 1fr;
+    max-width: 100%;
 }
 
-.aboutContainer h1{
-    grid-column-start: 1;
-    grid-column-end: 2;
+#aboutMeTitle{
+    display: grid;
+    text-align: center;
+    align-items: center;
 }
 
-.exampleLi{
-    grid-column-start: 1;
-    grid-column-end: 2;
-    grid-row-start: 2;
-    grid-row-end: 3;
+#aboutMeBanner{
+    display: grid;
+    align-items: center;
+    justify-items: center;
 }
 
-.examplePic{
+#aboutMeBanner img{
+    max-width: 80%;
+}
+
+.aboutTextBlock1{
+    max-width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 3fr;
+}
+
+.aboutTextBlock1 div img{
+    max-width: 60%;
+}
+
+.aboutTextBlock2{
+    max-width: 100%;
+    display: grid;
+    grid-template-columns: 3fr 1fr;
+    grid-template-rows: 1fr;
+}
+
+.aboutTextBlock2.picBlock{
+    grid-row-start: 1;
+    grid-row-end: 2;
     grid-column-start: 2;
     grid-column-end: 3;
-    grid-row-start: 1;
-    grid-row-end: 3;
-    border-style: solid;
-    height: 400px;
-    width: 400px;
 }
 
-.examplePara{
-    grid-row-start: 3;
-    grid-row-end: 4;
-    grid-column-start: 1;
-    grid-column-end: 2;
-}
-
-#morePic{
-    display: flex;
-    grid-column-start: 1;
-    grid-column-end: 2;
-    grid-row-start: 4;
-    grid-row-end: 5;
-    border-style: solid;
-    height: 200px;
-}
-
-#morePic div{
-    border-style: solid;
-    width: 33%;
-    height: 200px;
+.aboutTextBlock2 div img{
+    
+    max-width: 60%;
 }

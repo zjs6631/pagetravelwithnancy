@@ -1,41 +1,73 @@
 import React from 'react';
-
+import DisneyTrip from '../images/DisneyTrip.jpg';
+import Dahlia from '../images/Dahlia.jpg';
+import aboutMe from '../images/ABOUT_ME_COVER.png';
 const About = () =>{
+
+    const observer = new IntersectionObserver((entires)=>{
+        entires.forEach((entry)=>{
+            if(entry.isIntersecting){
+                entry.target.classList.add('show');
+            } else {
+                //entry.target.classList.remove('show')
+            }
+        })
+    });
+
+
+    const hiddenElements = document.querySelectorAll('.hidden');
+    hiddenElements.forEach((el)=> observer.observe(el));
+
+
     return(
     <div className='aboutContainer'>
-        <h1>Lets be friends!</h1>
-        <div className='exampleLi'>
-            <ul>
-                <li>one link</li>
-                <li>two link</li>
-                <li>three link</li>
-            </ul>
+        <div id='aboutMeTitle'><h1>About Me</h1></div>
+        <div id='aboutMeBanner'><img src={aboutMe} alt='Cover Image'/></div>
+        <div className='aboutTextBlock1'>
+            <div className='picBlock'>
+                <img src={DisneyTrip} alt='DisneyPic'/>
+                <p className='picDescript'>Picture of my most recent Disney trip - fall of 2022. Peep the Hogwarts tattoo on my right shoulder. :)  </p>
+            </div>
+            <p className='aboutText'>
+            Welcome! My name is Nancy and I am a 20 something year old, US living, lover of all things bookish. Like many, my love for reading has been with me since I could start sounding out words. I vividly remember the weekly visits to our small town library and going straight to A Series of Unfortunate Events books in the children’s section and hoping the next book in the series wasn’t checked out. I’m pretty sure I lived at the library, not only for borrowing books but for spending time there doing projects, reading, attending kid’s events and working towards completing my summer challenges for free swag.
+
+I can still picture the exact memory of going into the mall’s Books-A-Million and going to the middle grade chapter books section and telling my parents I was ready to get a picture-less chapter book. A pivotal moment in the life of Nancy. I may not remember the title of that book, but I remember the feelings that coursed through me as we walked to pay for that book. The excitement, the thrill, even the nervousness of not knowing what reading it will be like because it’s something NEW. And yet, I find myself still feeling that way every time I pick up a new read. That’s why I read.
+            </p>
+            
         </div>
-        <div className='examplePic'></div>
-        <div className='examplePara'>Aliqua officia labore consequat enim labore do pariatur pariatur id deserunt adipisicing cupidatat. Ipsum labore consectetur nostrud est. Laborum est officia ex qui sit qui sunt et labore. Ex in nulla eu veniam commodo. Reprehenderit sint id commodo excepteur laboris occaecat esse minim dolore cillum ullamco ad.</div>
-        <div id='morePic'>
-            <div></div>
-            <div></div>
+        <div className='aboutTextBlock2'>
             <div>
+            <p className='aboutText'>
+            The beautiful coastal town we live in is still growing and I always find myself walking into a new local bookstore to support. We have 5 fur babies, 3 cats and 2 dogs. Apart from a book, I can always be found with an iced coffee, a baked good, or smuggling chocolate around our toddler. My go-to genres are romance, fantasy, and young adult. I will read e-books and physical books and will even partake in the occasional Wattpad book. I will read anything from Hallmark inspired, small-town, feel-good romance books to gut-wrenching, world-building, enemy slaying fantasy books that will take me from world to world.
+
+Thanks for following me on this journey, and happy reading!
+            </p>
+            <ul>
+                <li> Auto-Buy Authors:
+                    <ul>
+                        <li>Sarah Dessen</li>
+                        <li>Sue Lynn Tan</li>
+                        <li>Kiera Cass</li>
+                        <li>Sarah J Mass</li>
+                    </ul>
+                </li>
+            </ul>
+            </div>
+            <div className='picBlock'>
+                <img src={Dahlia} alt='DahliaPic'/>
+                <p className='picDescript'>Picture of one of my cats, Dahlia, where she likes to lounge while we sit in my office space.</p>
+            </div>
+        </div>
+        <div id='letsBeFriends'><h1>Let's be friends!</h1></div>
+        <div id='Socials'>
+            <div id='GoodReads'>
+            
+            </div>
+            <div id='Insta'>
 
             </div>
         </div>
-        <div className='favAuthors'>
-            <h3>Some of my fav Authors</h3>
-            <ol>
-                <li>author 4</li>
-                <li>author 2</li>
-                <li>author 3</li>
-            </ol>
-        </div>
-        <div className='favBooks'>
-            <h3>Some of my fav Books</h3>
-            <ol>
-                <li>Book 1</li>
-                <li>Book 2</li>
-                <li>Book 3</li>
-            </ol>
-        </div>
+        <div id='footerHere'> This will be the footer</div>
     </div>
     )
 }

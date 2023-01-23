@@ -45,8 +45,10 @@ const Posts = () =>{
         {posts.map((post)=>{
                 return( 
                 <div className='fakePost' key={uniqid()}> 
-                        <h3>{post.title}</h3>
-                        <h4 className='blogDescript'>{post.category[0]}</h4>
+                        <div className='blogTxt'>
+                                <h3 className='blogTitle'>{post.title}</h3>
+                                <h4 className='blogDescript'>{post.category[0]}</h4>
+                        </div>
                         <img src = {`images/${post.img[0]}`} />
                         <button className='dummyBlogButton'>Read More!</button>
                 </div>
