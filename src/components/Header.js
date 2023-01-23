@@ -17,6 +17,19 @@ const Header = () =>{
     const hiddenElements = document.querySelectorAll('.hidden');
     hiddenElements.forEach((el)=> observer.observe(el));
 
+    const observer2 = new IntersectionObserver((entires)=>{
+        entires.forEach((entry)=>{
+            if(entry.isIntersecting){
+                entry.target.classList.add('showright');
+            } else {
+                //entry.target.classList.remove('show-right')
+            }
+        })
+    });
+
+    const hiddenElements2 = document.querySelectorAll('.hiddenright');
+    hiddenElements2.forEach((el)=> observer2.observe(el));
+
     return(
         <div id='Header' className='hidden'>
             

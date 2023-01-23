@@ -7,6 +7,19 @@ import {Link} from 'react-router-dom';
 
 const Post = (props) =>{
 
+    const observer2 = new IntersectionObserver((entires)=>{
+        entires.forEach((entry)=>{
+            if(entry.isIntersecting){
+                entry.target.classList.add('show-right');
+            } else {
+                //entry.target.classList.remove('show-right')
+            }
+        })
+    });
+
+    const hiddenElements2 = document.querySelectorAll('.hidden-right');
+    hiddenElements2.forEach((el)=> observer2.observe(el));
+
     const location = useLocation();
     const {post} = location.state;
 

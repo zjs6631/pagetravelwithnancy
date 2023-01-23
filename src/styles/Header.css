@@ -55,17 +55,24 @@
     
 }
 
+.HeaderLink a{
+    height: 100%;
+    width: 100%;
+}
+
 .headerBtn{
     border-style: none;
     background-color: black;
     color:#E5DDD5;
     font-size: 1.0em;
+    min-width: 100%;
+    min-height: 100%;
 }
 
 .headerBtn:hover{
-    height: 100%;
+    
     width: 100%;
-    background-color: #a05e5a;
+    background-color: #3b3b3b;
 }
 
 #headerDropdown{

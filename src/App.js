@@ -17,6 +17,7 @@ import './styles/Posts.css';
 import './styles/Shops.css';
 import './styles/Post.css';
 import './styles/About.css';
+import './styles/RatingScale.css';
 
 function App() {
 
@@ -34,7 +35,8 @@ function App() {
         
         <Route path='shops' element ={<Shops />}/>
         <Route path='about' element ={<About />}/>
-        
+        <Route path="booksread" element ={<BooksRead/>}/>
+        <Route path='scale' element={<RatingScale/>}/>
       </Routes>
 
       <Sidebar />

@@ -20,6 +20,19 @@ const Home = () =>{
     const hiddenElements = document.querySelectorAll('.hidden');
     hiddenElements.forEach((el)=> observer.observe(el));
 
+    const observer2 = new IntersectionObserver((entires)=>{
+        entires.forEach((entry)=>{
+            if(entry.isIntersecting){
+                entry.target.classList.add('show-right');
+            } else {
+                //entry.target.classList.remove('show-right')
+            }
+        })
+    });
+
+    const hiddenElements2 = document.querySelectorAll('.hidden-right');
+    hiddenElements2.forEach((el)=> observer2.observe(el));
+
     const [posts, setPosts] = useState([]);
     const [images, setImages] = useState([]);
     const [newestPost, setNewestPost] = useState([]);

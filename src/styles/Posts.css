@@ -11,7 +11,10 @@
     flex-wrap: wrap;
     gap: 10px;
     padding: 10px;
-    background-color: #E5DDD5;
+    padding-top:20px;
+    background-color: white;
+    gap: 20px;
+    justify-content: space-evenly;
     
 }
 .fakePost{
@@ -60,4 +63,18 @@
     grid-row-start: 3;
     grid-column-start: 2;
     margin: 5px;
+}
+
+.hiddenright{
+    opacity: 1;
+    filter: blur(5px);
+    transform: translateX(100%);
+    transition: all 2s;
+}
+
+.showright{
+    opacity: 1;
+    filter: blur(0);
+    transform:translateX(0);
+    
 }

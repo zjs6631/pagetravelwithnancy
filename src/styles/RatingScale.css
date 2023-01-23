@@ -1,0 +1,50 @@
+#scalePageContainer{
+    display: grid;
+    grid-template-rows: 1fr 3fr 2fr 2fr 150px;
+    justify-items: center;
+}
+
+#scaleTitle{
+    display: grid;
+    justify-items: center;
+    align-items: center;
+}
+
+#scaleImg{
+    display: grid;
+    justify-items: center;
+}
+
+#scaleImg img{
+    max-width: 40%;
+}
+
+#scaleDescript{
+    display: grid;
+    justify-items: center;
+}
+
+#scaleDescript p{
+    
+    max-width: 65ch;
+}
+
+#scaleList{
+    list-style: none;
+}
+
+#scaleList li p{
+    max-width: 65ch;
+}
+
+#listHeader1{
+    color: green;
+}
+
+#listHeader2{
+    color:yellow;
+}
+
+#listHeader3{
+    color:red;
+}
