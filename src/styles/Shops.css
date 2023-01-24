@@ -1,47 +1,13 @@
 .shopsPage{
-    background-color: #E5DDD5;
-    color: #934C47;
-}
-
-.shopsPage h1{
-    padding-left: 10px;
-}
-.shopsContainer{
-    display: flex;
-    flex-wrap: wrap;
-    gap: 10px;
-    padding: 10px;
+    display: grid;
+    justify-items: center;
+    align-items: center;
+    background-color: white;
     
 }
-.fakePost{
-    display: grid;
-    grid-template-columns: 50% 50%;
-    grid-template-rows: 50% 50%;
-    background-color: white;
-    width: 40%;
-    height: auto;
-    text-align: center;
-    align-items: center;
-    padding: 10px;
-}
 
-.fakePost img{
 
-    grid-column-start: 1;
-    grid-column-end: 2;
-    grid-row-start: 1;
-    grid-row-end: 3;
-    max-width: 100%;
-    height: auto;
-}
-
-.dummyBlogButton{
-    background-color: #a96e6c;
-    color: #E5DDD5;
-    border-style: none;
-    justify-self: center;
-    align-self: flex-end;
-    grid-row-start: 2;
-    grid-column-start: 2;
-    margin: 5px;
+.shopsPage img{
+    max-width: 50%;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }

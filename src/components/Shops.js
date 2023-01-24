@@ -1,9 +1,12 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import examplePic from '../images/exampleBlog.jpg';
+import construction from '../images/UnderConstrSign.png';
 
 const Shops = () =>{
 
-        const observer = new IntersectionObserver((entires)=>{
+
+        useEffect(()=>{
+            const observer = new IntersectionObserver((entires)=>{
                 entires.forEach((entry)=>{
                     if(entry.isIntersecting){
                         entry.target.classList.add('show');
@@ -28,10 +31,13 @@ const Shops = () =>{
         
             const hiddenElements2 = document.querySelectorAll('.hidden-right');
             hiddenElements2.forEach((el)=> observer2.observe(el));
+        },[])
+
+        
 
     return(
     <div className='shopsPage'>
-        <h1>Under Construction</h1>
+        <img src={construction} alt='UNDER CONSTRUCTION'/>
     </div>
     )
 }

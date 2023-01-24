@@ -1,34 +1,36 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import { Link } from 'react-router-dom';
 import ptwnlogo from '../images/ptwnlogo.png'
 
 const Header = () =>{
 
-    const observer = new IntersectionObserver((entires)=>{
-        entires.forEach((entry)=>{
-            if(entry.isIntersecting){
-                entry.target.classList.add('show');
-            } else {
-                //entry.target.classList.remove('show')
-            }
-        })
-    });
-
-    const hiddenElements = document.querySelectorAll('.hidden');
-    hiddenElements.forEach((el)=> observer.observe(el));
-
-    const observer2 = new IntersectionObserver((entires)=>{
-        entires.forEach((entry)=>{
-            if(entry.isIntersecting){
-                entry.target.classList.add('showright');
-            } else {
-                //entry.target.classList.remove('show-right')
-            }
-        })
-    });
-
-    const hiddenElements2 = document.querySelectorAll('.hiddenright');
-    hiddenElements2.forEach((el)=> observer2.observe(el));
+    useEffect(()=>{
+        const observer = new IntersectionObserver((entires)=>{
+            entires.forEach((entry)=>{
+                if(entry.isIntersecting){
+                    entry.target.classList.add('show');
+                } else {
+                    //entry.target.classList.remove('show')
+                }
+            })
+        });
+    
+        const hiddenElements = document.querySelectorAll('.hidden');
+        hiddenElements.forEach((el)=> observer.observe(el));
+    
+        const observer2 = new IntersectionObserver((entires)=>{
+            entires.forEach((entry)=>{
+                if(entry.isIntersecting){
+                    entry.target.classList.add('showright');
+                } else {
+                    //entry.target.classList.remove('show-right')
+                }
+            })
+        });
+    
+        const hiddenElements2 = document.querySelectorAll('.hiddenright');
+        hiddenElements2.forEach((el)=> observer2.observe(el));
+    },[])
 
     return(
         <div id='Header' className='hidden'>

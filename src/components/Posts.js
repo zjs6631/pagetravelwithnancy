@@ -5,33 +5,7 @@ import {Link} from 'react-router-dom';
 
 const Posts = () =>{
 
-        const observer = new IntersectionObserver((entires)=>{
-                entires.forEach((entry)=>{
-                    if(entry.isIntersecting){
-                        entry.target.classList.add('show');
-                    } else {
-                        //entry.target.classList.remove('show')
-                    }
-                })
-            });
         
-            const hiddenElements = document.querySelectorAll('.hidden');
-            hiddenElements.forEach((el)=> observer.observe(el));
-
-            const observer2 = new IntersectionObserver((entires)=>{
-                
-                entires.forEach((entry)=>{
-                        console.log(entry.target);
-                    if(entry.isIntersecting){
-                        entry.target.classList.add('showright');
-                    } else {
-                        entry.target.classList.remove('showright')
-                    }
-                })
-            });
-        
-            const hiddenElements2 = document.querySelectorAll('.hiddenright');
-            hiddenElements2.forEach((el)=> observer2.observe(el));
 
         const [posts, setPosts] = useState([])
 
@@ -51,6 +25,34 @@ const Posts = () =>{
                 .catch((err) =>{
                         console.log(err.message);
                 })
+
+                const observer = new IntersectionObserver((entires)=>{
+                    entires.forEach((entry)=>{
+                        if(entry.isIntersecting){
+                            entry.target.classList.add('show');
+                        } else {
+                            //entry.target.classList.remove('show')
+                        }
+                    })
+                });
+            
+                const hiddenElements = document.querySelectorAll('.hidden');
+                hiddenElements.forEach((el)=> observer.observe(el));
+    
+                const observer2 = new IntersectionObserver((entires)=>{
+                    
+                    entires.forEach((entry)=>{
+                            console.log(entry.target);
+                        if(entry.isIntersecting){
+                            entry.target.classList.add('showright');
+                        } else {
+                            entry.target.classList.remove('showright')
+                        }
+                    })
+                });
+            
+                const hiddenElements2 = document.querySelectorAll('.hiddenright');
+                hiddenElements2.forEach((el)=> observer2.observe(el));
         },[])
 
 

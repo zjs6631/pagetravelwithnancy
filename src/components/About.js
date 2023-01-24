@@ -1,30 +1,53 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import DisneyTrip from '../images/DisneyTrip.jpg';
 import Dahlia from '../images/Dahlia.jpg';
 import aboutMe from '../images/ABOUT_ME_COVER.png';
 const About = () =>{
 
-    const observer = new IntersectionObserver((entires)=>{
-        entires.forEach((entry)=>{
-            if(entry.isIntersecting){
-                entry.target.classList.add('show');
-            } else {
-                //entry.target.classList.remove('show')
-            }
-        })
-    });
+
+    useEffect(()=>{
+        const observer = new IntersectionObserver((entires)=>{
+            entires.forEach((entry)=>{
+                if(entry.isIntersecting){
+                    entry.target.classList.add('show');
+                } else {
+                    //entry.target.classList.remove('show')
+                }
+            })
+        });
+    
+    
+        const hiddenElements = document.querySelectorAll('.hidden');
+        hiddenElements.forEach((el)=> observer.observe(el));
+    
+        const observer2 = new IntersectionObserver((entires)=>{
+                    
+            entires.forEach((entry)=>{
+                    console.log(entry.target);
+                if(entry.isIntersecting){
+                    entry.target.classList.add('showright');
+                } else {
+                    //entry.target.classList.remove('showright')
+                }
+            })
+        });
+    
+        const hiddenElements2 = document.querySelectorAll('.hiddenright');
+        hiddenElements2.forEach((el)=> observer2.observe(el));
+    },[])
 
 
-    const hiddenElements = document.querySelectorAll('.hidden');
-    hiddenElements.forEach((el)=> observer.observe(el));
+    
+
+    
 
 
     return(
     <div className='aboutContainer'>
-        <div id='aboutMeTitle'><h1>About Me</h1></div>
-        <div id='aboutMeBanner'><img src={aboutMe} alt='Cover Image'/></div>
-        <div className='aboutTextBlock1'>
-            <div className='picBlock'>
+        <div id='aboutMeTitle' className='hiddenright'><h1>About Me</h1></div>
+        <div id='aboutMeBanner' className='hidden'><img src={aboutMe} alt='Cover Image'/></div>
+        <div className='aboutTextBlock1 hiddenright'>
+            <div className='picBlock hidden'>
                 <img src={DisneyTrip} alt='DisneyPic'/>
                 <p className='picDescript'>Picture of my most recent Disney trip - fall of 2022. Peep the Hogwarts tattoo on my right shoulder. :)  </p>
             </div>
@@ -35,7 +58,7 @@ I can still picture the exact memory of going into the mall’s Books-A-Million 
             </p>
             
         </div>
-        <div className='aboutTextBlock2'>
+        <div className='aboutTextBlock2 hidden'>
             <div>
             <p className='aboutText'>
             The beautiful coastal town we live in is still growing and I always find myself walking into a new local bookstore to support. We have 5 fur babies, 3 cats and 2 dogs. Apart from a book, I can always be found with an iced coffee, a baked good, or smuggling chocolate around our toddler. My go-to genres are romance, fantasy, and young adult. I will read e-books and physical books and will even partake in the occasional Wattpad book. I will read anything from Hallmark inspired, small-town, feel-good romance books to gut-wrenching, world-building, enemy slaying fantasy books that will take me from world to world.
@@ -53,12 +76,12 @@ Thanks for following me on this journey, and happy reading!
                 </li>
             </ul>
             </div>
-            <div className='picBlock'>
+            <div className='picBlock hiddenright'>
                 <img src={Dahlia} alt='DahliaPic'/>
                 <p className='picDescript'>Picture of one of my cats, Dahlia, where she likes to lounge while we sit in my office space.</p>
             </div>
         </div>
-        <div id='letsBeFriends'><h1>Let's be friends!</h1></div>
+        <div id='letsBeFriends' className='hidden'><h1>Let's be friends!</h1></div>
         <div id='Socials'>
             <div id='GoodReads'>
             
@@ -67,7 +90,7 @@ Thanks for following me on this journey, and happy reading!
 
             </div>
         </div>
-        <div id='footerHere'> This will be the footer</div>
+        <div id='footerHere' > This will be the footer</div>
     </div>
     )
 }

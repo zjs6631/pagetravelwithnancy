@@ -1,21 +1,25 @@
-import React from "react";
+import React, {useEffect} from "react";
 import ratingScale from "../images/Rating_System.png"
 
 const RatingScale = () =>{
 
-    const observer = new IntersectionObserver((entires)=>{
-        entires.forEach((entry)=>{
-            if(entry.isIntersecting){
-                entry.target.classList.add('show');
-            } else {
-                //entry.target.classList.remove('show')
-            }
-        })
-    });
+    useEffect(()=>{
+        const observer = new IntersectionObserver((entires)=>{
+            entires.forEach((entry)=>{
+                if(entry.isIntersecting){
+                    entry.target.classList.add('show');
+                } else {
+                    //entry.target.classList.remove('show')
+                }
+            })
+        });
+    
+    
+        const hiddenElements = document.querySelectorAll('.hidden');
+        hiddenElements.forEach((el)=> observer.observe(el));
+    },[])
 
-
-    const hiddenElements = document.querySelectorAll('.hidden');
-    hiddenElements.forEach((el)=> observer.observe(el));
+    
 
     return(
         <div id="scalePageContainer">

@@ -1,5 +1,5 @@
 .aboutContainer{
-    background-color: #E5DDD5;
+    background-color: white;
     color: black;
     display: grid;
     grid-template-rows: 3fr 6fr 5fr 5fr 1.5fr 2fr 1fr;
@@ -7,9 +7,13 @@
 }
 
 #aboutMeTitle{
+    color: white;
     display: grid;
     text-align: center;
     align-items: center;
+    font-size: 1.5rem;
+    background-image: url("../images/DALLEbooks.png");
+    
 }
 
 #aboutMeBanner{
@@ -20,9 +24,11 @@
 
 #aboutMeBanner img{
     max-width: 80%;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
 .aboutTextBlock1{
+    font-size: 1.1rem;
     padding-left: 10px;
     max-width: 100%;
     display: grid;
@@ -30,11 +36,18 @@
     justify-items: center;
 }
 
+.aboutTextBlock1 div{
+    font-size: .8rem;
+}
+
 .aboutTextBlock1 div img{
     max-width: 60%;
+    align-self: end;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
 .aboutTextBlock2{
+    font-size: 1.1rem;
     padding-left: 10px;
     max-width: 100%;
     display: grid;
@@ -43,9 +56,19 @@
     justify-items: center;
 }
 
+.aboutTextBlock2 div{
+    
+}
+
 .picBlock{
     display: grid;
     justify-items: center;
+    font-size: .8rem;
+}
+
+.picBlock img{
+    align-self: end;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
 .aboutTextBlock2.picBlock{
@@ -61,6 +84,7 @@
 }
 
 #letsBeFriends{
+    background-color: #E5DDD5;
     display: grid;
     justify-content: center;
     align-items: center;
