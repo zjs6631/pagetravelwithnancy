@@ -74,18 +74,24 @@ const Home = () =>{
                 <img src={currentlyReading2} />
             </div>
             <div id='HomeThreeLinks' className='hidden'>
+                
                 <div className='threelinks'>
                     <div id='ratingScale'></div>
                     <h3>See My Rating Scale Here</h3>
                 </div>
+                
+                
                 <div className='threelinks'>
                     <div id='wrapup'></div>
                     <h3>Want to know what I read in 2022?</h3>
                 </div>
+                
+                
                 <div className='threelinks'>
                     <div id='aboutmeicon'></div>
                     <h3>Learn more about me!</h3>
                 </div>
+                
             </div>
             <Link to={`/post`} state={{post:posts[0]}}>
                 <div id='newestPost' className='hidden'>

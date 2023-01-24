@@ -1,6 +1,7 @@
 import React, {useEffect} from "react";
 import ratingScale from "../images/Rating_System.png"
 
+
 const RatingScale = () =>{
 
     useEffect(()=>{
@@ -23,14 +24,14 @@ const RatingScale = () =>{
 
     return(
         <div id="scalePageContainer">
-            <div id="scaleTitle"><h1>My Rating Scale</h1></div>
-            <div id="scaleImg"><img src={ratingScale} alt='my rating scale'/></div>
-            <div id="scaleDescript">
+            <div id="scaleTitle" className="hidden"><h1>My Rating Scale</h1></div>
+            <div id="scaleImg" className="hiddenright"><img src={ratingScale} alt='my rating scale'/></div>
+            <div id="scaleDescript" className="hidden">
                 <p>I recently changed the way that I provided my ratings for books. I wrote on a recent Instagram post that authors put a lot of time and hard work into their writing and getting their books published and bad reviews don’t always help when it’s something that simply may not be a reader’s cup of tea. What motivated me to move from the typical 1-5 stars to the below way of rating, was a specific book review I saw on Goodreads. The review listed the reasons why they were rating the book a 1 star and how even that was generous but the description to me was .. interesting. It talked about how they did not even finish the book and how they disliked how it was too detailed in how it was related to sports and their strict workout regime. Isn’t that just the authors way of setting the tone for the rest of the book? I wouldn’t except a trigger warning for this particular book when on the cover it clearly shows that it will be a sports book.
 
 I’m a firm believer that not all books will be for everyone but that doesn’t mean you should trash talk that book because you don’t like sports. That being said, ever since being part of the bookstagram community, I have gotten a first hand look at how indie authors put so much love and dedication to their work and I am here to support that. And just another reason why I also don’t rate any Wattpad books I read. Those authors post books for public enjoyment for more often than not: free. I will most likely never post about books that I DNF (do not finish) but can be found on my Goodreads profile, with no rating, but with an explanation as to why it was DNF.</p>
             </div>
-            <div id="scaleListDiv">
+            <div id="scaleListDiv" className="hiddenright">
                 <ul id="scaleList">
                     <li>
                         <h1 id="listHeader1">Loved It</h1>
