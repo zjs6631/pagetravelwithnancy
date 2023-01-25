@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { useLocation } from 'react-router-dom';
+import { useLocation, useNavigate} from 'react-router-dom';
 import uniqid from 'uniqid';
 import {format} from "date-fns";
 
@@ -11,6 +11,8 @@ const Post = (props) =>{
     const [comments, setComments] = useState([]);
 
     const [currComment, setCurrComment] = useState('');
+
+    const navigate = useNavigate();
 
     function handleChange(event) {
         setCurrComment(event.target.value);
@@ -24,10 +26,22 @@ const Post = (props) =>{
           'Accept': 'application/json',
           'Content-Type': 'application/json'
         },
-        body: {
+        body: JSON.stringify({
             comment: currComment,
             postID: post._id,
-        }});
+            authorID: "me",
+        })})
+        .catch((error) =>{
+            if (error.response.status === 403){
+                console.log("here!")
+                navigate('/');
+                
+            } else {
+                navigate('/blog-posts')
+            }
+        });
+        console.log('at the end!')
+        navigate('/login');
             
     }
 
@@ -99,7 +113,7 @@ const Post = (props) =>{
             <div className='commentForm'>
                 <form onSubmit={handleSubmit}>
                     <input type='text' name='comment' value={currComment} onChange={handleChange} />
-                    <input type='submit' value='Submit'/>
+                    <button type='submit' value='Submit'>Submit</button>
                 </form>
             </div>
         </div>

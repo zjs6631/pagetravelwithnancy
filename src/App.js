@@ -10,6 +10,7 @@ import Shops from './components/Shops';
 import Post from './components/Post';
 import BooksRead from './components/BooksRead';
 import RatingScale from './components/RatingScale';
+import Login from './components/Login';
 import './styles/Header.css';
 import './styles/Home.css';
 import './styles/Sidebar.css';
@@ -37,6 +38,7 @@ function App() {
         <Route path='about' element ={<About />}/>
         <Route path="booksread" element ={<BooksRead/>}/>
         <Route path='scale' element={<RatingScale/>}/>
+        <Route path='login' element={<Login/>}/>
       </Routes>
 
       <Sidebar />
