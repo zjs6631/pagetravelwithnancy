@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { useLocation, useNavigate} from 'react-router-dom';
 import uniqid from 'uniqid';
 import {format} from "date-fns";
+import Footer from './Footer';
 
 const Post = (props) =>{
 
@@ -46,6 +47,7 @@ const Post = (props) =>{
             }
         });
         console.log('at the end!')
+        navigate(`/blog-posts/${post._id}`)
         
             
     }
@@ -89,7 +91,7 @@ const Post = (props) =>{
     
 
     
-
+    
     
     
     return(
@@ -121,6 +123,7 @@ const Post = (props) =>{
                     <button type='submit' value='Submit'>Submit</button>
                 </form>
             </div>
+            <Footer />
         </div>
     )
 }
