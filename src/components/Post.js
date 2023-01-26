@@ -20,11 +20,16 @@ const Post = (props) =>{
     }
 
     function handleSubmit(event){
+        let token = localStorage.getItem('token');
+        console.log(token);
+        console.log(token.token)
+        event.preventDefault();
         fetch(`http://localhost:3000/blog-posts/${post._id}`, {method: 'post',
         dataType: 'json',
         headers: {
           'Accept': 'application/json',
-          'Content-Type': 'application/json'
+          'Content-Type': 'application/json',
+          'Authorization': 'Bearer ' + token
         },
         body: JSON.stringify({
             comment: currComment,
@@ -34,14 +39,14 @@ const Post = (props) =>{
         .catch((error) =>{
             if (error.response.status === 403){
                 console.log("here!")
-                navigate('/');
+                navigate('/login');
                 
             } else {
                 navigate('/blog-posts')
             }
         });
         console.log('at the end!')
-        navigate('/login');
+        
             
     }
 
