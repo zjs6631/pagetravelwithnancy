@@ -37,13 +37,13 @@ const Post = (props) =>{
         setToken(localStorage.getItem('token')); //set our token state variable to be the value of the token stored in local storage
 
         
-        /*
-        if(token == ''){
+        console.log(JSON.parse(localStorage.getItem('token')));
+        if(JSON.parse(localStorage.getItem('token')) == ''){
             navigate('/login', {
                 state: {post: post}
             })
         }
-        */
+        
         
         //POST api call to send a new comment
         fetch(`http://localhost:3000/blog-posts/${post._id}`, {method: 'post',
@@ -59,9 +59,10 @@ const Post = (props) =>{
             authorID: "me",
         })})
         .then(()=>{
-            //setComments(comments.push(currComment));
+            window.location.reload(false); //reload the page when we send the post request.
         })
         .catch((error) =>{
+            console.log(error);
             if (error.response.status === 403){
                 console.log("here!")
                 navigate('/login', {
@@ -72,8 +73,7 @@ const Post = (props) =>{
                 navigate('/blog-posts')
             }
         });
-        console.log(token);
-        console.log(comments)
+        
 
         
             
@@ -81,7 +81,7 @@ const Post = (props) =>{
 
     
     
-    //useEffect hook that involves an api call to get the post information we want to display
+    //useEffect hook that involves an api call to get the post information we want to d
     useEffect(()=>{
 
         fetch(`http://localhost:3000/blog-posts/${post._id}`, {method: 'get',
@@ -90,14 +90,12 @@ const Post = (props) =>{
           'Accept': 'application/json',
           'Content-Type': 'application/json'
         }})
-            .then(response => {
-                response.json()
-                console.log(response);
-            }
+            .then(response => response.json()
             )
             .then(response => {
                 
                 setComments(response.comments);
+                
     
             })
             .catch((err) =>{

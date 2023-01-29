@@ -52,7 +52,7 @@ const Login = (props) => {
         .catch((error) =>{
             if (error.response.status === 403){
                 console.log("here!")
-                //navigate('/');
+                navigate('/login');
                 
             } else {
                 navigate(`/post`,{

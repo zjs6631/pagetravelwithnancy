@@ -6,7 +6,7 @@ const Footer = () =>{
     //function firing on render for some reason.
     return(
         <div className='Footer'>
-            <button onClick={console.log("clicked")}>Log out</button>
+            <button onClick={()=>{localStorage.setItem('token', '')}}>Log out</button>
         </div>
     )
 }
