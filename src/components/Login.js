@@ -24,9 +24,7 @@ const Login = (props) => {
     }
 
     function handleSubmit(event){
-
         event.preventDefault();
-
         fetch(`http://localhost:3000/login`, {method: 'post',
         dataType: 'json',
         headers: {
@@ -37,32 +35,27 @@ const Login = (props) => {
             username: state.username,
             password: state.password,
         })})
-        .then((response) =>{
-            response.json();
+        .then((res)=>{
+            
+            return res.json()
         })
-        .then((response) =>{
-            
-            console.log(response);
-            console.log(response.token);
-            
-            let token = response.data.token;
-
-            localStorage.setItem('token', token);
-            
+        .then((res) =>{
+            console.log(res);
+            localStorage.setItem('token', JSON.stringify(res.token));
+            console.log(localStorage.getItem('token'));
         })
         .catch((error) =>{
             if (error.response.status === 403){
                 console.log("here!")
-                navigate('/');
+                //navigate('/');
                 
             } else {
-                navigate('/blog-posts')
+                //navigate('/blog-posts')
             }
         })
         ;
         console.log('at the end!')
-        console.log(localStorage.getItem('token'));
-        
+        //navigate('/');
     }
 
 

@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { useLocation, useNavigate} from 'react-router-dom';
 import uniqid from 'uniqid';
 import {format} from "date-fns";
+import Footer from './Footer';
 
 const Post = (props) =>{
 
@@ -20,11 +21,16 @@ const Post = (props) =>{
     }
 
     function handleSubmit(event){
+        let token = localStorage.getItem('token');
+        console.log(token);
+        console.log(token.token)
+        event.preventDefault();
         fetch(`http://localhost:3000/blog-posts/${post._id}`, {method: 'post',
         dataType: 'json',
         headers: {
           'Accept': 'application/json',
-          'Content-Type': 'application/json'
+          'Content-Type': 'application/json',
+          'Authorization': 'Bearer ' + token
         },
         body: JSON.stringify({
             comment: currComment,
@@ -34,14 +40,15 @@ const Post = (props) =>{
         .catch((error) =>{
             if (error.response.status === 403){
                 console.log("here!")
-                navigate('/');
+                navigate('/login');
                 
             } else {
                 navigate('/blog-posts')
             }
         });
         console.log('at the end!')
-        navigate('/login');
+        navigate(`/blog-posts/${post._id}`)
+        
             
     }
 
@@ -84,7 +91,7 @@ const Post = (props) =>{
     
 
     
-
+    
     
     
     return(
@@ -116,6 +123,7 @@ const Post = (props) =>{
                     <button type='submit' value='Submit'>Submit</button>
                 </form>
             </div>
+            <Footer />
         </div>
     )
 }
