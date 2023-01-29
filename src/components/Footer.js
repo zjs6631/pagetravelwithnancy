@@ -5,7 +5,7 @@ const Footer = () =>{
 
     return(
         <div className='Footer'>
-            <button onClick={localStorage.clear()}>Log out</button>
+            <button onClick={console.log("clicked")}>Log out</button>
         </div>
     )
 }

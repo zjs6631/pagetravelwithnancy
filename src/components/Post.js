@@ -7,8 +7,13 @@ import Footer from './Footer';
 const Post = (props) =>{
 
     const location = useLocation();
-    const {post} = location.state || {};
+    const {post} = location.state;
 
+    if(post === null){
+        post = location.state.post;
+    }
+    const [token, setToken] = useState('');
+    
     const [comments, setComments] = useState([]);
 
     const [currComment, setCurrComment] = useState('');
@@ -21,33 +26,49 @@ const Post = (props) =>{
     }
 
     function handleSubmit(event){
-        let token = localStorage.getItem('token');
-        console.log(token);
-        console.log(token.token)
+
         event.preventDefault();
+
+        setToken(localStorage.getItem('token'));
+
+        
+        /*
+        if(token == ''){
+            navigate('/login', {
+                state: {post: post}
+            })
+        }
+        */
+        
+        
         fetch(`http://localhost:3000/blog-posts/${post._id}`, {method: 'post',
         dataType: 'json',
         headers: {
           'Accept': 'application/json',
           'Content-Type': 'application/json',
-          'Authorization': 'Bearer ' + token
+          'Authorization': 'Bearer ' + JSON.parse(localStorage.getItem('token'))
         },
         body: JSON.stringify({
             comment: currComment,
             postID: post._id,
             authorID: "me",
         })})
+        .then(()=>{
+            //setComments(comments.push(currComment));
+        })
         .catch((error) =>{
             if (error.response.status === 403){
                 console.log("here!")
-                navigate('/login');
+                navigate('/login', {
+                    state: {post: post,}
+                });
                 
             } else {
                 navigate('/blog-posts')
             }
         });
-        console.log('at the end!')
-        navigate(`/blog-posts/${post._id}`)
+        console.log(token);
+        console.log(comments)
         
             
     }
@@ -66,6 +87,7 @@ const Post = (props) =>{
             .then(response => response.json()
             )
             .then(response => {
+                
                 setComments(response.comments);
                 
     
@@ -86,8 +108,10 @@ const Post = (props) =>{
     
         const hiddenElements2 = document.querySelectorAll('.hidden-right');
         hiddenElements2.forEach((el)=> observer2.observe(el));
+        console.log(comments);
     },[])
 
+    
     
 
     
@@ -107,20 +131,21 @@ const Post = (props) =>{
             </div>
             <div className='postComments'>
                 <h4 id='commentHeader'>Comments</h4>
-                {comments.map((comment)=>{
-                    return( 
-                        <div className='comment' key={uniqid()}>
-                        <p>{comment.authorID.username}</p>
-                        <p>{format(new Date(comment.createdAt), 'PPpp')}</p>
-                        <p>{comment.comment}</p>
-                        </div>
-                    )
-                })}
+                {
+                    comments.map((comment)=>{
+                        return( 
+                            <div className='comment' key={uniqid()}>
+                            <p>{comment.authorID.username}</p>
+                            <p>{format(new Date(comment.createdAt), 'PPpp')}</p>
+                            <p>{comment.comment}</p>
+                            </div>
+                        )
+                    })}
             </div>
             <div className='commentForm'>
                 <form onSubmit={handleSubmit}>
                     <input type='text' name='comment' value={currComment} onChange={handleChange} />
-                    <button type='submit' value='Submit'>Submit</button>
+                    <input type='submit' value='Submit'/>
                 </form>
             </div>
             <Footer />

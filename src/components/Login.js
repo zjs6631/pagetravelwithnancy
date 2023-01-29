@@ -11,7 +11,9 @@ const Login = (props) => {
         password: '',
     })
 
-    console.log(localStorage);
+    const location = useLocation();
+
+    console.log(location);
 
     const navigate = useNavigate();
     
@@ -50,12 +52,18 @@ const Login = (props) => {
                 //navigate('/');
                 
             } else {
-                //navigate('/blog-posts')
+                navigate(`/post`,{
+                state: {post: location.state.post,}
+            })
             }
+        });
+        
+        console.log(location.post)
+        navigate(`/post`,{
+            state: {post: location.state.post,}
         })
-        ;
-        console.log('at the end!')
-        //navigate('/');
+
+        
     }
 
 
