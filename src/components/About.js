@@ -2,9 +2,14 @@ import React, {useEffect} from 'react';
 import DisneyTrip from '../images/DisneyTrip.jpg';
 import Dahlia from '../images/Dahlia.jpg';
 import aboutMe from '../images/ABOUT_ME_COVER.png';
+/*
+This will render the component used to display the about page for the blog
+*/
 const About = () =>{
 
-
+    //useEffect hook used to implement observer objects that are used to animate items on the page
+    //observer1 brings items in from the left
+    //observer 2 brings items in from the right
     useEffect(()=>{
         const observer = new IntersectionObserver((entires)=>{
             entires.forEach((entry)=>{
@@ -34,14 +39,14 @@ const About = () =>{
     
         const hiddenElements2 = document.querySelectorAll('.hiddenright');
         hiddenElements2.forEach((el)=> observer2.observe(el));
-    },[])
+    },[]) //need to pass the empty array or GET requests will flood the API
 
 
     
 
     
 
-
+    //return the JSX to show all About info. Nothing needs to be obtained from the database for this page.
     return(
     <div className='aboutContainer'>
         <div id='aboutMeTitle' className='hiddenright'><h1>About Me</h1></div>

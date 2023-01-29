@@ -3,15 +3,18 @@ import { useLocation, useNavigate} from 'react-router-dom';
 import uniqid from 'uniqid';
 import {format} from "date-fns";
 import Footer from './Footer';
-
+//Component that shows a specific post and a comment section at the bottom of the page
 const Post = (props) =>{
 
+    //location and navigation used to handle moving between login page and the post page when login is requested/provided
     const location = useLocation();
+    
     const {post} = location.state;
 
     if(post === null){
         post = location.state.post;
     }
+    //we keep a state to hold the token value, comments array, and the comment currently being typed
     const [token, setToken] = useState('');
     
     const [comments, setComments] = useState([]);
@@ -20,16 +23,18 @@ const Post = (props) =>{
 
     const navigate = useNavigate();
 
+    //handleChange maintains value of currently typed comment
     function handleChange(event) {
         setCurrComment(event.target.value);
         console.log(event.target.value);
     }
 
+
     function handleSubmit(event){
 
         event.preventDefault();
 
-        setToken(localStorage.getItem('token'));
+        setToken(localStorage.getItem('token')); //set our token state variable to be the value of the token stored in local storage
 
         
         /*
@@ -40,13 +45,13 @@ const Post = (props) =>{
         }
         */
         
-        
+        //POST api call to send a new comment
         fetch(`http://localhost:3000/blog-posts/${post._id}`, {method: 'post',
         dataType: 'json',
         headers: {
           'Accept': 'application/json',
           'Content-Type': 'application/json',
-          'Authorization': 'Bearer ' + JSON.parse(localStorage.getItem('token'))
+          'Authorization': 'Bearer ' + JSON.parse(localStorage.getItem('token')) 
         },
         body: JSON.stringify({
             comment: currComment,
@@ -69,13 +74,14 @@ const Post = (props) =>{
         });
         console.log(token);
         console.log(comments)
+
         
             
     }
 
     
     
-
+    //useEffect hook that involves an api call to get the post information we want to display
     useEffect(()=>{
 
         fetch(`http://localhost:3000/blog-posts/${post._id}`, {method: 'get',
@@ -84,12 +90,14 @@ const Post = (props) =>{
           'Accept': 'application/json',
           'Content-Type': 'application/json'
         }})
-            .then(response => response.json()
+            .then(response => {
+                response.json()
+                console.log(response);
+            }
             )
             .then(response => {
                 
                 setComments(response.comments);
-                
     
             })
             .catch((err) =>{

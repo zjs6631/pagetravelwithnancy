@@ -4,10 +4,12 @@ import currentlyReading2 from '../images/currentlyReading2.png';
 import NewestPost from '../images/NewestPost.png';
 import {Link} from 'react-router-dom';
 
-
+//home page component 
 const Home = () =>{ 
 
     
+    //we get the book data from the database using a fetch api call 
+    //we process the data by turning it into json then setting that state of the posts to that response
 
     useEffect(()=>{
 
@@ -60,10 +62,12 @@ const Home = () =>{
         
     }, []);
 
+    //the states we keep for the home page
     const [posts, setPosts] = useState([]);
-    const [images, setImages] = useState([]);
+    const [images, setImages] = useState([]); //may be used in the future when image storage is readdressed
     const [newestPost, setNewestPost] = useState([]);
-
+    
+    //the JSX contains some Link elements that pass state to the element is is linked to.
     return(
         <div id='Home'>
             <div id='HomeName' className='hidden'>

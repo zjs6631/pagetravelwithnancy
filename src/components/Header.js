@@ -2,8 +2,10 @@ import React, {useEffect} from 'react';
 import { Link } from 'react-router-dom';
 import ptwnlogo from '../images/ptwnlogo.png'
 
+//header component that provides nav links to the different pages of the website
 const Header = () =>{
-
+    //the observer objects are implemented in a useEffect here so that animations carry over when a new page is loaded. 
+    //without the observer objects the page seems to freeze up.
     useEffect(()=>{
         const observer = new IntersectionObserver((entires)=>{
             entires.forEach((entry)=>{
@@ -31,7 +33,7 @@ const Header = () =>{
         const hiddenElements2 = document.querySelectorAll('.hiddenright');
         hiddenElements2.forEach((el)=> observer2.observe(el));
     },[])
-
+    //JSX contains several links to different portions of the website using the react router "Link" element
     return(
         <div id='Header' className='hidden'>
             
