@@ -5,10 +5,13 @@ import {format} from "date-fns";
 
 const Login = (props) => {
 
+    
     const [state, setState] = useState({
         username: '',
         password: '',
     })
+
+    console.log(localStorage);
 
     const navigate = useNavigate();
     
@@ -20,7 +23,10 @@ const Login = (props) => {
         });
     }
 
-    function handleSubmit(){
+    function handleSubmit(event){
+
+        event.preventDefault();
+
         fetch(`http://localhost:3000/login`, {method: 'post',
         dataType: 'json',
         headers: {
@@ -31,6 +37,19 @@ const Login = (props) => {
             username: state.username,
             password: state.password,
         })})
+        .then((response) =>{
+            response.json();
+        })
+        .then((response) =>{
+            
+            console.log(response);
+            console.log(response.token);
+            
+            let token = response.data.token;
+
+            localStorage.setItem('token', token);
+            
+        })
         .catch((error) =>{
             if (error.response.status === 403){
                 console.log("here!")
@@ -39,9 +58,11 @@ const Login = (props) => {
             } else {
                 navigate('/blog-posts')
             }
-        });
+        })
+        ;
         console.log('at the end!')
-        navigate('/');
+        console.log(localStorage.getItem('token'));
+        
     }
 
 
