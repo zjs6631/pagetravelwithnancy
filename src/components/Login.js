@@ -49,15 +49,16 @@ const Login = (props) => {
             //then place the token in localStorage 
             console.log(res);
             
-            if(typeof localStorage.getItem('token') == undefined){
+            if(localStorage.getItem('token') === 'undefined'){
                 console.log("it's detecting that the token is undefined")
                 localStorage.setItem('token', JSON.stringify(''));
             } else {
+                console.log('we set the token');
                 localStorage.setItem('token', JSON.stringify(res.token));
             }
             
             //(localStorage.getItem('token') == 'undefined') ? localStorage.setItem('token', JSON.stringify('')) : localStorage.setItem('token', JSON.stringify(res.token));
-            localStorage.setItem('token', JSON.stringify(res.token));
+            //localStorage.setItem('token', JSON.stringify(res.token));
             
         })
         .catch((error) =>{
@@ -75,18 +76,24 @@ const Login = (props) => {
 
         
         
-        console.log(location.post)
-        if(JSON.parse(localStorage.getItem('token')) === ''){
+        if(localStorage.getItem('token') === 'undefined'){
+            localStorage.setItem('token', JSON.stringify(''));
             navigate(`/login`,{
                 state: {post: location.state.post,}
             })
+        }
+
+        console.log(JSON.parse(localStorage.getItem('token')));
+        console.log(JSON.parse(localStorage.getItem('token')) === '');
+        if(JSON.parse(localStorage.getItem('token')) === ''){
+            
         } else {
             console.log('this navigation is used')
             navigate(`/post`,{
             state: {post: location.state.post,}
             })
         }
-
+        
         
     }
 
