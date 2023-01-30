@@ -26,6 +26,8 @@ const Login = (props) => {
           [evt.target.name]: value
         });
     }
+
+    console.log(state.username + ' ' + state.password);
     //handle submit makes a POST call to the API which sends the entered username and password
     function handleSubmit(event){
         event.preventDefault();
@@ -46,8 +48,17 @@ const Login = (props) => {
         .then((res) =>{
             //then place the token in localStorage 
             console.log(res);
+            
+            if(typeof localStorage.getItem('token') == undefined){
+                console.log("it's detecting that the token is undefined")
+                localStorage.setItem('token', JSON.stringify(''));
+            } else {
+                localStorage.setItem('token', JSON.stringify(res.token));
+            }
+            
+            //(localStorage.getItem('token') == 'undefined') ? localStorage.setItem('token', JSON.stringify('')) : localStorage.setItem('token', JSON.stringify(res.token));
             localStorage.setItem('token', JSON.stringify(res.token));
-            console.log(localStorage.getItem('token'));
+            
         })
         .catch((error) =>{
             if (error.response.status === 403){
@@ -55,16 +66,26 @@ const Login = (props) => {
                 navigate('/login');
                 
             } else {
-                navigate(`/post`,{
+                console.log('in error catch')
+                navigate(`/login`,{
                 state: {post: location.state.post,}
             })
             }
         });
+
+        
         
         console.log(location.post)
-        navigate(`/post`,{
+        if(JSON.parse(localStorage.getItem('token')) === ''){
+            navigate(`/login`,{
+                state: {post: location.state.post,}
+            })
+        } else {
+            console.log('this navigation is used')
+            navigate(`/post`,{
             state: {post: location.state.post,}
-        })
+            })
+        }
 
         
     }

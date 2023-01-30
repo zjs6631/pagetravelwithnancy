@@ -6,7 +6,11 @@ const Footer = () =>{
     //function firing on render for some reason.
     return(
         <div className='Footer'>
-            <button onClick={()=>{localStorage.setItem('token', '')}}>Log out</button>
+            <button onClick={()=>{
+                localStorage.setItem('token', JSON.stringify(''));
+                window.location.reload(false); //reload the page when we send the post request.
+                }}>Log out
+            </button>
         </div>
     )
 }
