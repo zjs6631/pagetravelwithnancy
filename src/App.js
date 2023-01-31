@@ -19,6 +19,7 @@ import './styles/Shops.css';
 import './styles/Post.css';
 import './styles/About.css';
 import './styles/RatingScale.css';
+import CreateUserForm from './components/CreateUserForm';
 
 function App() {
 
@@ -39,6 +40,7 @@ function App() {
         <Route path="booksread" element ={<BooksRead/>}/>
         <Route path='scale' element={<RatingScale/>}/>
         <Route path='login' element={<Login/>}/>
+        <Route path='createAccount' element={<CreateUserForm/>} />
       </Routes>
 
       <Sidebar />

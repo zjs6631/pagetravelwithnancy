@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { useLocation, useNavigate} from 'react-router-dom';
+import { useLocation, useNavigate, Link} from 'react-router-dom';
 import uniqid from 'uniqid';
 import {format} from "date-fns";
 //login page used to get a JWT used to make sure a user is logged in when they comment
@@ -9,8 +9,12 @@ const Login = (props) => {
     const [state, setState] = useState({
         username: '',
         password: '',
+        errorHeader: '',
     })
 
+    let errorHeader = document.getElementById('errorHeader');
+
+    //let errorHeader = document.getElementById('errorHeader');
     //useLocation to maintain a record of the post that prompted the user to login
     const location = useLocation();
 
@@ -43,15 +47,22 @@ const Login = (props) => {
         })})
         .then((res)=>{
             //if successful then we will recieve a token back, so convert it to json
+            console.log(res);
             return res.json()
         })
         .then((res) =>{
             //then place the token in localStorage 
             console.log(res);
-            
-            if(localStorage.getItem('token') === 'undefined'){
+            console.log(localStorage.getItem('token'));
+            console.log(localStorage.getItem('token') === "")
+            localStorage.setItem('token', JSON.stringify(res.token));
+            if(localStorage.getItem('token') === 'undefined' || JSON.parse(localStorage.getItem('token')) === ''){
                 console.log("it's detecting that the token is undefined")
                 localStorage.setItem('token', JSON.stringify(''));
+                setState({...state,
+                    errorHeader: 'Invalid Login'})
+                errorHeader.innerHTML = state.errorHeader;
+                
             } else {
                 console.log('we set the token');
                 localStorage.setItem('token', JSON.stringify(res.token));
@@ -65,6 +76,9 @@ const Login = (props) => {
             if (error.response.status === 403){
                 console.log("here!")
                 navigate('/login');
+                setState({...state,
+                    errorHeader: 'Invalid Login'})
+                errorHeader.innerHTML = state.errorHeader;
                 
             } else {
                 console.log('in error catch')
@@ -108,6 +122,8 @@ const Login = (props) => {
                     <input type='text' name='password' value={state.password} onChange={handleChange} />
                     <button type='submit' value='Submit'>Submit</button> 
             </form>
+            <Link to='/createAccount' state={{post: location.state.post}}><button className='createAccBtn'>Create Account</button></Link>
+            <h3 id='errorHeader'></h3>
         </div>
     )
 }

@@ -37,8 +37,9 @@ const Post = (props) =>{
         setToken(localStorage.getItem('token')); //set our token state variable to be the value of the token stored in local storage
 
         
-        console.log(localStorage.getItem('token'));
-        if(JSON.parse(localStorage.getItem('token')) == ''){
+        console.log(localStorage.getItem('token') === 'undefined');
+        
+        if(localStorage.getItem('token') === 'undefined' || JSON.parse(localStorage.getItem('token')) == ''){
             navigate('/login', {
                 state: {post: post}
             })
