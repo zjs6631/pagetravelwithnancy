@@ -24,3 +24,41 @@
     max-width: 100%;
 }
 
+.postComments{
+    padding: 15px;
+}
+
+.commentContainer{
+    max-height: 300px;
+    max-width: 50%;
+    overflow-y: scroll;
+}
+
+.comment{
+    display: grid;
+    max-width: 90%;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    background-color: rgb(223, 223, 223);
+    padding-left: 10px;
+    font-size: small;
+}
+
+.commentAuthor{
+    grid-column-start: 1;
+    grid-column-end: 2;
+}
+
+.commentDate{
+    grid-column-start: 2;
+    
+}
+
+.commentBody{
+    grid-column-start: 1;
+    grid-column-end: 3;
+    grid-row-start: 2;
+}
+
+
+

@@ -2,6 +2,7 @@ import React, {useEffect} from 'react';
 import DisneyTrip from '../images/DisneyTrip.jpg';
 import Dahlia from '../images/Dahlia.jpg';
 import aboutMe from '../images/ABOUT_ME_COVER.png';
+import Footer from '../components/Footer';
 /*
 This will render the component used to display the about page for the blog
 */
@@ -95,7 +96,7 @@ Thanks for following me on this journey, and happy reading!
 
             </div>
         </div>
-        <div id='footerHere' > This will be the footer</div>
+        <div id='footerHere' ><Footer /></div>
     </div>
     )
 }

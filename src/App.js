@@ -19,6 +19,7 @@ import './styles/Shops.css';
 import './styles/Post.css';
 import './styles/About.css';
 import './styles/RatingScale.css';
+import './styles/Footer.css';
 import CreateUserForm from './components/CreateUserForm';
 
 function App() {

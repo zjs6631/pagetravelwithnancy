@@ -1,0 +1,37 @@
+.Footer{
+    display: flex;
+    flex-direction: row;
+    background-color: #E5DDD5;
+    min-height: 100%;
+    min-width: 100%;
+    justify-content:space-around;
+    flex-wrap: wrap;
+    
+}
+
+#FooterLinks{
+    display: flex;
+    flex-direction: row;
+    min-width: 50%;
+    gap: 50px;
+    padding-left: 10%;
+    
+}
+
+#FooterLinks img{
+    background-color: #a96e6c;
+    border-radius: 50%;
+    padding:5px;
+}
+
+.Footer button{
+    background-color: #a96e6c;
+    color: #E5DDD5;
+    max-width: 80px;
+    align-self: center;
+    
+}
+
+.sLink{
+    align-self: center;
+}

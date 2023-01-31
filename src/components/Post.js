@@ -138,16 +138,18 @@ const Post = (props) =>{
             </div>
             <div className='postComments'>
                 <h4 id='commentHeader'>Comments</h4>
+                <div className='commentContainer'>
                 {
                     comments.map((comment)=>{
                         return( 
                             <div className='comment' key={uniqid()}>
-                            <p>{comment.authorID.username}</p>
-                            <p>{format(new Date(comment.createdAt), 'PPpp')}</p>
-                            <p>{comment.comment}</p>
+                            <p className='commentAuthor'>{comment.authorID.username}</p>
+                            <p className='commentDate'>{format(new Date(comment.createdAt), 'PPpp')}</p>
+                            <p className='commentBody'>{comment.comment}</p>
                             </div>
                         )
                     })}
+                </div>
             </div>
             <div className='commentForm'>
                 <form onSubmit={handleSubmit}>
@@ -155,7 +157,9 @@ const Post = (props) =>{
                     <input type='submit' value='Submit'/>
                 </form>
             </div>
-            <Footer />
+            <div className='Footer'>
+                <Footer />
+            </div>
         </div>
     )
 }
